@@ -1,7 +1,5 @@
-import 'package:carrot_feirinha/src/app/app_text_styles.dart';
 import 'package:carrot_feirinha/src/shared/components/default_form_field.dart';
 import 'package:carrot_feirinha/src/shared/components/password_form_field.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app.dart';
@@ -15,6 +13,7 @@ class SigninPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        padding: EdgeInsets.only(bottom: 16),
         child: Column(
           children: [
             const AppLogo(),
@@ -36,7 +35,7 @@ class SigninPage extends StatelessWidget {
                   ),
                   PasswordFormField(),
                   SizedBox(
-                    height: 16,
+                    height: 6,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 24),
@@ -49,7 +48,7 @@ class SigninPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 12,
                   ),
                   Container(
                     width: double.infinity,
@@ -62,14 +61,33 @@ class SigninPage extends StatelessWidget {
                       ),
                       child: Text(
                         'Entrar',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                        ),
+                        style: AppTextStyles.button,
                         textAlign: TextAlign.center,
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Center(
+                    child: TextButton(
+                      onPressed: () {  },
+                      child: RichText(
+                        text: TextSpan(
+                          text: "Não possui conta?",
+                          style: AppTextStyles.labelInput,
+                          children: [
+                            TextSpan(
+                              text: "Crie agora",
+                              style: AppTextStyles.labelInput.copyWith(
+                                color: AppColors.green600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
             )

@@ -18,12 +18,10 @@ class DefaultFormField extends StatelessWidget {
             textAlign: TextAlign.start,
           ),
           TextField(
+            style: AppTextStyles.labelHint,
             decoration: InputDecoration(
               hintText: "Digite o email",
-              hintStyle: TextStyle(
-                color: AppColors.black,
-                fontSize: 18,
-              ),
+              hintStyle: AppTextStyles.labelHint,
               border: UnderlineInputBorder(
                 borderSide: BorderSide(
                   color: AppColors.gray300,

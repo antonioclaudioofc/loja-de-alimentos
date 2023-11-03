@@ -17,94 +17,25 @@ mixin AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
-  static const caption = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 14,
-    color: AppColors.gray600,
-    fontWeight: FontWeight.w500,
-  );
-
-  static const h2 = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 48,
-    color: AppColors.black,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const h3 = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 40,
-    color: AppColors.black,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const h4 = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 32,
-    color: AppColors.black,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const h5 = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 24,
-    color: AppColors.black,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const h6 = TextStyle(
+  static const labelHint = TextStyle(
     fontFamily: "Inter",
     fontSize: 20,
     color: AppColors.black,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.normal,
   );
 
-  static const subtitle = TextStyle(
+  static const caption = TextStyle(
     fontFamily: "Inter",
     fontSize: 16,
-    color: AppColors.black,
-    fontWeight: FontWeight.w500,
-  );
-
-  static const bodySmall = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 14,
-    color: AppColors.black,
-    fontWeight: FontWeight.w400,
-  );
-
-  static const body = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 16,
-    fontWeight: FontWeight.w400,
-    color: AppColors.black,
-  );
-
-  static const bodyLarge = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 18,
-    fontWeight: FontWeight.w400,
-    color: AppColors.black,
-  );  
-
-  static const buttonSmall = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 14,
-    fontWeight: FontWeight.bold,
-    color: AppColors.black,
+    color: AppColors.gray600,
+    fontWeight: FontWeight.normal,
   );
 
   static const button = TextStyle(
     fontFamily: "Inter",
-    fontSize: 16,
-    fontWeight: FontWeight.bold,
-    color: AppColors.black,
-  );
-
-  static const buttonLarge = TextStyle(
-    fontFamily: "Inter",
-    fontSize: 18,
-    fontWeight: FontWeight.w500,
+    fontSize: 20,
     color: AppColors.gray50,
+    fontWeight: FontWeight.normal,
   );
+  
 }

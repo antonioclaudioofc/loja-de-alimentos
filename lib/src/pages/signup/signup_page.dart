@@ -45,7 +45,12 @@ class SignupPage extends StatelessWidget {
                   ),
                   CustomButton(
                     label: "Cadastrar",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        PagePaths.homePath,
+                      );
+                    },
                   ),
                   SizedBox(
                     height: 6,

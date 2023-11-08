@@ -53,7 +53,12 @@ class SigninPage extends StatelessWidget {
                   ),
                   CustomButton(
                     label: "Entrar",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        PagePaths.homePath,
+                      );
+                    },
                   ),
                   SizedBox(
                     height: 6,

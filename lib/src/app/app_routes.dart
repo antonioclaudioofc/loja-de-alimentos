@@ -7,7 +7,7 @@ import '../pages/signup/signup_page.dart';
 Map<String, Widget Function(BuildContext)> routes = {
   PagePaths.signupPath: (context) => const SignupPage(),
   PagePaths.signinPath: (context) => const SigninPage(),
-  PagePaths.homePath: (context) => const Home(),
+  PagePaths.homePath: (context) => const HomePage(),
 };
 
 class PagePaths {

@@ -1,4 +1,7 @@
+import 'package:carrot_feirinha/src/shared/components/context_main.dart';
 import 'package:flutter/material.dart';
+
+import '../../app/app.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,31 +14,49 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Inicio',
+      body: ContextMain(),
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.green100,
+        onPressed: () {},
+        child: Icon(
+          Icons.add,
+          color: AppColors.black,
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        color: AppColors.green100,
+        child: IconTheme(
+          child: Padding(
+            padding: EdgeInsets.all(12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.home),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.search),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.add_shopping_cart),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.person),
+                ),
+              ],
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Busca',
+          data: IconThemeData(
+            color: AppColors.black,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Adicionar',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_shopping_cart),
-            label: 'Carrinho',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Perfil',
-          ),
-        ],
-        selectedItemColor: Colors.amber[800],
+        ),
       ),
     );
   }

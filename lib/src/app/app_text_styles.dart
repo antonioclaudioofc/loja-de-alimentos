@@ -10,6 +10,13 @@ mixin AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
+  static const h3 = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 20,
+    color: AppColors.black,
+    fontWeight: FontWeight.w500,
+  );
+
   static const h4 = TextStyle(
     fontFamily: "Inter",
     fontSize: 14,
@@ -44,5 +51,4 @@ mixin AppTextStyles {
     color: AppColors.gray50,
     fontWeight: FontWeight.normal,
   );
-  
 }

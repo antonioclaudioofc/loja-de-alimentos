@@ -10,6 +10,13 @@ mixin AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
+  static const h4 = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 14,
+    color: AppColors.black,
+    fontWeight: FontWeight.w500,
+  );
+
   static const labelInput = TextStyle(
     fontFamily: "Inter",
     fontSize: 16,

@@ -16,8 +16,11 @@ class _HeaderTitleState extends State<HeaderTitle> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: 12,
+        ),
         Text(
-          widget.title??"",
+          widget.title ?? "",
           style: AppTextStyles.h1,
           textAlign: TextAlign.center,
         ),

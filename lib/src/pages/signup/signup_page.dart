@@ -15,60 +15,62 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const AppLogo(),
-            HeaderTitle(
-              title: "Cadastre-se",
-            ),
-            Form(
-              child: Column(
-                children: [
-                  DefaultFormField(
-                    label: "Nome",
-                    hintText: "Digite seu nome",
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  DefaultFormField(
-                    label: "Email",
-                    hintText: "Digite seu email",
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  PasswordFormField(),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  CustomButton(
-                    label: "Cadastrar",
-                    onPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        PagePaths.homePath,
-                      );
-                    },
-                  ),
-                  SizedBox(
-                    height: 6,
-                  ),
-                  LabelTogleLogin(
-                    label: "Já possui conta? ",
-                    labelLink: "Entrar",
-                    onPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        PagePaths.signinPath,
-                      );
-                    },
-                  ),
-                ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const AppLogo(),
+              HeaderTitle(
+                title: "Cadastre-se",
               ),
-            ),
-          ],
+              Form(
+                child: Column(
+                  children: [
+                    DefaultFormField(
+                      label: "Nome",
+                      hintText: "Digite seu nome",
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    DefaultFormField(
+                      label: "Email",
+                      hintText: "Digite seu email",
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    PasswordFormField(),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    CustomButton(
+                      label: "Cadastrar",
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          PagePaths.homePath,
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    LabelTogleLogin(
+                      label: "Já possui conta? ",
+                      labelLink: "Entrar",
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          PagePaths.signinPath,
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

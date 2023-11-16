@@ -15,68 +15,70 @@ class SigninPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        padding: EdgeInsets.only(bottom: 16),
-        child: Column(
-          children: [
-            const AppLogo(),
-            HeaderTitle(
-              title: "Faça o login",
-            ),
-            Form(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  DefaultFormField(
-                    label: "Email",
-                    hintText: "Digite seu email",
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  PasswordFormField(),
-                  SizedBox(
-                    height: 6,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 24),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Esqueceu a senha?",
-                        style: AppTextStyles.caption,
+      body: Center(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.only(bottom: 16),
+          child: Column(
+            children: [
+              const AppLogo(),
+              HeaderTitle(
+                title: "Faça o login",
+              ),
+              Form(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    DefaultFormField(
+                      label: "Email",
+                      hintText: "Digite seu email",
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    PasswordFormField(),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 24),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Esqueceu a senha?",
+                          style: AppTextStyles.caption,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  CustomButton(
-                    label: "Entrar",
-                    onPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        PagePaths.homePath,
-                      );
-                    },
-                  ),
-                  SizedBox(
-                    height: 6,
-                  ),
-                  LabelTogleLogin(
-                    label: "Não possui conta? ",
-                    labelLink: "Crie agora",
-                    onPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        PagePaths.signupPath,
-                      );
-                    },
-                  ),
-                ],
-              ),
-            )
-          ],
+                    SizedBox(
+                      height: 12,
+                    ),
+                    CustomButton(
+                      label: "Entrar",
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          PagePaths.homePath,
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    LabelTogleLogin(
+                      label: "Não possui conta? ",
+                      labelLink: "Crie agora",
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          PagePaths.signupPath,
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

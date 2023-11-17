@@ -34,7 +34,26 @@ class HomePage extends StatelessWidget {
             ),
           ),
           LabelTitleProduct(),
-          CardProduct(),
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            height: 240,
+            width: double.infinity,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                CardProduct(),
+                CardProduct(),
+                CardProduct(),
+                CardProduct(),
+                CardProduct(),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 112,
+          ),
         ],
       ),
     );

@@ -10,6 +10,13 @@ mixin AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
+  static const subtitle = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 18,
+    color: AppColors.black,
+    fontWeight: FontWeight.w500,
+  );
+
   static const h3 = TextStyle(
     fontFamily: "Inter",
     fontSize: 20,

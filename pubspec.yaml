@@ -64,6 +64,14 @@ flutter:
     - assets/images/abacate.png
     - assets/images/logo.svg
     - assets/images/fruits.jpg
+    - assets/images/abacate.png
+    - assets/images/caju.png
+    - assets/images/goiaba.png
+    - assets/images/manga.png
+    - assets/images/alface.png
+    - assets/images/cebola.png
+    - assets/images/cenoura.png
+    - assets/images/pimentao.png
       #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

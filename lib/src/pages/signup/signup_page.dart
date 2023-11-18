@@ -49,7 +49,7 @@ class SignupPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(
                           context,
-                          PagePaths.homePath,
+                          PagePaths.navigationPath,
                         );
                       },
                     ),

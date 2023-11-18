@@ -3,6 +3,7 @@ import 'package:carrot_feirinha/src/shared/components/context_main.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app.dart';
+import '../search/search_page.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});
@@ -12,52 +13,65 @@ class NavigationPage extends StatefulWidget {
 }
 
 class _NavigationPageState extends State<NavigationPage> {
+  int _currentIndex = 0;
+  final List<Widget> _pages = [
+    HomePage(),
+    SearchPage(),
+  ];
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomePage(),
-      extendBody: true,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.white,
-        onPressed: () {},
-        child: Icon(
-          Icons.add,
-          color: AppColors.black,
+      body: _pages[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        unselectedItemColor: AppColors.gray700,
+        selectedItemColor: AppColors.green400,
+        onTap: onTabTapped,
+        showUnselectedLabels: true,
+        currentIndex: _currentIndex,
+        selectedIconTheme: IconThemeData(
+          color: AppColors.green400,
         ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        color: AppColors.white,
-        child: IconTheme(
-          child: Padding(
-            padding: EdgeInsets.all(12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.home),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.search),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.add_shopping_cart),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.person),
-                ),
-              ],
+        backgroundColor: AppColors.gray100,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
             ),
+            label: "Inicio",
           ),
-          data: IconThemeData(
-            color: AppColors.black,
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+            ),
+            label: "Buscar",
           ),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.add,
+            ),
+            label: "Adicionar",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.add_shopping_cart,
+            ),
+            label: "Carrinho",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+            ),
+            label: "Perfil",
+          )
+        ],
       ),
     );
   }

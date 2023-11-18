@@ -3,7 +3,18 @@ import 'package:carrot_feirinha/src/app/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CardProduct extends StatefulWidget {
-  const CardProduct({super.key});
+  const CardProduct({
+    Key? key,
+    required this.urlImage,
+    required this.price,
+    required this.nameProduct,
+    required this.quantityProduct,
+  }) : super(key: key);
+
+  final String urlImage;
+  final double price;
+  final String nameProduct;
+  final double quantityProduct;
 
   @override
   State<CardProduct> createState() => _CardProductState();
@@ -43,7 +54,7 @@ class _CardProductState extends State<CardProduct> {
                 height: 74,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/images/abacate.png"),
+                    image: AssetImage(widget.urlImage),
                     fit: BoxFit.fitWidth,
                   ),
                 ),
@@ -57,14 +68,14 @@ class _CardProductState extends State<CardProduct> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Abacate",
+                    widget.nameProduct,
                     style: AppTextStyles.subtitle,
                   ),
                   SizedBox(
                     height: 6,
                   ),
                   Text(
-                    "12 unidades, preço",
+                    "${widget.quantityProduct} unidades, preço",
                     style: AppTextStyles.h4.copyWith(
                       color: AppColors.gray500,
                     ),
@@ -83,7 +94,7 @@ class _CardProductState extends State<CardProduct> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "R\$ 7,00",
+                    "R\$ ${widget.price}0",
                     style: AppTextStyles.subtitle,
                   ),
                   ElevatedButton(

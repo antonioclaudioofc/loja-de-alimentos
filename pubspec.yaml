@@ -72,6 +72,9 @@ flutter:
     - assets/images/cebola.png
     - assets/images/cenoura.png
     - assets/images/pimentao.png
+    - assets/images/arroz.png
+    - assets/images/suco.png
+    - assets/images/paes.png
       #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

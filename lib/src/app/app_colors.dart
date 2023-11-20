@@ -39,4 +39,5 @@ class AppColors extends ChangeNotifier {
   static const red900 = Color(0xFF7F1D1D);
 
   static const yellow500 = Color(0xFFE9A925);
+  static const orange500 = Color(0xFFF3603F);
 }

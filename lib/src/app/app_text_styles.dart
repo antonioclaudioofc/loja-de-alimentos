@@ -31,6 +31,7 @@ mixin AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
+
   static const labelInput = TextStyle(
     fontFamily: "Inter",
     fontSize: 16,

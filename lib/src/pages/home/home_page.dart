@@ -1,6 +1,7 @@
 import 'package:carrot_feirinha/src/app/app.dart';
 import 'package:carrot_feirinha/src/pages/components/label_title_product.dart';
 import 'package:carrot_feirinha/src/shared/components/card_product.dart';
+import 'package:carrot_feirinha/src/shared/components/card_topic.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/components/context_main.dart';
@@ -122,7 +123,45 @@ class HomePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 112,
+            height: 24,
+          ),
+          LabelTitleProduct(
+            label: "Mantimentos",
+            labelAction: "ver mais",
+            onPressed: () {},
+          ),
+          SizedBox(
+            height: 24,
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            height: 96,
+            width: double.infinity,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                CardTopic(
+                  urlImage: "assets/images/arroz.png",
+                  label: "Arroz",
+                  color: AppColors.gray200,
+                ),
+                CardTopic(
+                  urlImage: "assets/images/suco.png",
+                  label: "Bebidas",
+                  color: AppColors.yellow500.withOpacity(0.5),
+                ),
+                CardTopic(
+                  urlImage: "assets/images/paes.png",
+                  label: "Paẽs",
+                  color: AppColors.orange500.withOpacity(0.5),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 24,
           ),
         ],
       ),

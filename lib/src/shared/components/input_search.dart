@@ -16,6 +16,9 @@ class InputSearch extends StatelessWidget {
           filled: true,
           fillColor: AppColors.gray100,
           border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.gray100,
+            ),
             borderRadius: BorderRadius.all(
               Radius.circular(12),
             ),
@@ -25,7 +28,7 @@ class InputSearch extends StatelessWidget {
           ),
           hintText: 'Pesquisar produto',
           labelStyle: TextStyle(
-            color: AppColors.gray700,
+            color: AppColors.gray600,
           ),
         ),
       ),

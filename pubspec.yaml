@@ -75,6 +75,9 @@ flutter:
     - assets/images/arroz.png
     - assets/images/suco.png
     - assets/images/paes.png
+    - assets/images/vegetais.png
+    - assets/images/frutas.png
+    - assets/images/carnes.png
       #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

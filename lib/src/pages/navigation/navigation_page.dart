@@ -3,6 +3,7 @@ import 'package:carrot_feirinha/src/shared/components/context_main.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app.dart';
+import '../add_product/add_product_pade.dart';
 import '../search/search_page.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _NavigationPageState extends State<NavigationPage> {
   final List<Widget> _pages = [
     HomePage(),
     SearchPage(),
+    AddProductPage(),
   ];
 
   void onTabTapped(int index) {

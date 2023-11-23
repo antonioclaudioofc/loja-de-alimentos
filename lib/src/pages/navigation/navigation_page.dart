@@ -3,7 +3,7 @@ import 'package:carrot_feirinha/src/shared/components/context_main.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app.dart';
-import '../add_product/add_product_pade.dart';
+import '../add_product/add_product_page.dart';
 import '../search/search_page.dart';
 
 class NavigationPage extends StatefulWidget {

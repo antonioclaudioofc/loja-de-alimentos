@@ -1,3 +1,6 @@
+import 'package:carrot_feirinha/src/shared/components/default_input_name.dart';
+import 'package:carrot_feirinha/src/shared/components/input_classification.dart';
+import 'package:carrot_feirinha/src/shared/components/input_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app.dart';
@@ -13,34 +16,39 @@ class _FormProductPageState extends State<FormProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(
           top: 40,
-          bottom: 64,
+          bottom: 16,
+          left: 24,
           right: 24,
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+        child: Column(
           children: [
-            Center(
-              child: Text(
-                "Produto",
-                style: TextStyle(
-                  backgroundColor: Colors.amber,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Produto",
+                  style: AppTextStyles.h3,
                 ),
-              ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      PagePaths.navigationPath,
+                    );
+                  },
+                  icon: Icon(Icons.close),
+                ),
+              ],
             ),
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  PagePaths.navigationPath,
-                );
-              },
-              icon: Icon(
-                Icons.close,
-              ),
+            SizedBox(
+              height: 64,
             ),
+            InputImage(),
+            DefaultInputName(),
+            InputClassification(),
           ],
         ),
       ),

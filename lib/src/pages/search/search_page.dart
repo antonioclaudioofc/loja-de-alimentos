@@ -26,8 +26,8 @@ class SearchPage extends StatelessWidget {
             height: 20,
           ),
           Wrap(
-            spacing: 8,
-            runSpacing: 8,
+            spacing: 24,
+            runSpacing: 20,
             children: [
               CardClassification(
                 urlImage: "assets/images/vegetais.png",

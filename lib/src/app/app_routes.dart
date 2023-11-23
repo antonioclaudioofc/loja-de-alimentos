@@ -1,4 +1,4 @@
-import 'package:carrot_feirinha/src/pages/add_product/add_product_pade.dart';
+import 'package:carrot_feirinha/src/pages/add_product/add_product_page.dart';
 import 'package:carrot_feirinha/src/pages/form_product/form_product_page.dart';
 import 'package:carrot_feirinha/src/pages/home/home_page.dart';
 import 'package:carrot_feirinha/src/pages/navigation/navigation_page.dart';

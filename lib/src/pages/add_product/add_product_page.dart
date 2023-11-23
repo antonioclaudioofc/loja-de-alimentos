@@ -15,41 +15,36 @@ class _AddProductPageState extends State<AddProductPage> {
     return Scaffold(
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
-          vertical: 16,
-          horizontal: 40,
+          vertical: 40,
+          horizontal: 16,
         ),
-        child: Column(
+        child: Wrap(
+          spacing: 4,
+          runSpacing: 10,
           children: [
-            Wrap(
-              spacing: 4,
-              runSpacing: 10,
-              direction: Axis.horizontal,
-              children: [
-                UpdateProduct(
-                  urlImage: "assets/images/abacate.png",
-                  price: 12,
-                  nameProduct: "Abacate",
-                  quantityProduct: 22,
-                ),
-                UpdateProduct(
-                  urlImage: "assets/images/abacate.png",
-                  price: 12,
-                  nameProduct: "Abacate",
-                  quantityProduct: 22,
-                ),
-                UpdateProduct(
-                  urlImage: "assets/images/abacate.png",
-                  price: 12,
-                  nameProduct: "Abacate",
-                  quantityProduct: 22,
-                ),
-                UpdateProduct(
-                  urlImage: "assets/images/abacate.png",
-                  price: 12,
-                  nameProduct: "Abacate",
-                  quantityProduct: 22,
-                ),
-              ],
+            UpdateProduct(
+              urlImage: "assets/images/abacate.png",
+              price: 12,
+              nameProduct: "Abacate",
+              quantityProduct: 22,
+            ),
+            UpdateProduct(
+              urlImage: "assets/images/abacate.png",
+              price: 12,
+              nameProduct: "Abacate",
+              quantityProduct: 22,
+            ),
+            UpdateProduct(
+              urlImage: "assets/images/abacate.png",
+              price: 12,
+              nameProduct: "Abacate",
+              quantityProduct: 22,
+            ),
+            UpdateProduct(
+              urlImage: "assets/images/abacate.png",
+              price: 12,
+              nameProduct: "Abacate",
+              quantityProduct: 22,
             ),
           ],
         ),

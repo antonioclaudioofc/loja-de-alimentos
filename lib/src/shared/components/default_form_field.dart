@@ -19,30 +19,27 @@ class DefaultFormField extends StatefulWidget {
 class _DefaultFormFieldState extends State<DefaultFormField> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            widget.label ?? "",
-            style: AppTextStyles.labelInput,
-            textAlign: TextAlign.start,
-          ),
-          TextField(
-            style: AppTextStyles.labelHint,
-            decoration: InputDecoration(
-              hintText: widget.hintText,
-              hintStyle: AppTextStyles.labelHint,
-              border: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: AppColors.gray300,
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.label ?? "",
+          style: AppTextStyles.labelInput,
+          textAlign: TextAlign.start,
+        ),
+        TextField(
+          style: AppTextStyles.labelHint,
+          decoration: InputDecoration(
+            hintText: widget.hintText,
+            hintStyle: AppTextStyles.labelHint,
+            border: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.gray300,
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

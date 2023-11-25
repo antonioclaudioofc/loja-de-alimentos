@@ -16,7 +16,6 @@ class _AddProductPageState extends State<AddProductPage> {
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
           vertical: 40,
-          horizontal: 16,
         ),
         child: Wrap(
           spacing: 4,

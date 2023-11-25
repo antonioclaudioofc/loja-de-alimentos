@@ -1,6 +1,8 @@
+import 'package:carrot_feirinha/src/shared/components/custom_button.dart';
 import 'package:carrot_feirinha/src/shared/components/default_input_name.dart';
 import 'package:carrot_feirinha/src/shared/components/input_classification.dart';
 import 'package:carrot_feirinha/src/shared/components/input_image.dart';
+import 'package:carrot_feirinha/src/shared/components/multiple_inputs.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app.dart';
@@ -49,6 +51,14 @@ class _FormProductPageState extends State<FormProductPage> {
             InputImage(),
             DefaultInputName(),
             InputClassification(),
+            MultipleInputs(),
+            SizedBox(
+              height: 24,
+            ),
+            CustomButton(
+              label: "Adicionar",
+              onPressed: () {},
+            ),
           ],
         ),
       ),

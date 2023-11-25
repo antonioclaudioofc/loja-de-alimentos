@@ -22,7 +22,6 @@ class _CustomButtonState extends State<CustomButton> {
     return Container(
       width: double.infinity,
       height: 56,
-      padding: EdgeInsets.symmetric(horizontal: 24),
       child: ElevatedButton(
         onPressed: widget.onPressed,
         style: ElevatedButton.styleFrom(

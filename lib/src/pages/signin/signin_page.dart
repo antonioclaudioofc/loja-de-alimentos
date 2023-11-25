@@ -17,7 +17,9 @@ class SigninPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: SingleChildScrollView(
-          padding: EdgeInsets.only(bottom: 16),
+          padding: EdgeInsets.symmetric(
+            horizontal: 24,
+          ),
           child: Column(
             children: [
               const AppLogo(),
@@ -76,7 +78,7 @@ class SigninPage extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

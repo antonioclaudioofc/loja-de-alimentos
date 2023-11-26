@@ -35,7 +35,7 @@ class _InputQuantityState extends State<InputQuantity> {
               borderRadius: BorderRadius.circular(4),
             ),
           ),
-        )
+        ),
       ],
     );
   }

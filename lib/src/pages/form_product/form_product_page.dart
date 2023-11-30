@@ -1,11 +1,11 @@
-import 'package:carrot_feirinha/src/shared/components/custom_button.dart';
-import 'package:carrot_feirinha/src/shared/components/default_input_name.dart';
-import 'package:carrot_feirinha/src/shared/components/input_classification.dart';
-import 'package:carrot_feirinha/src/shared/components/input_image.dart';
-import 'package:carrot_feirinha/src/shared/components/multiple_inputs.dart';
+import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
+import 'package:carrot_feirinha/src/components/inputs/common_input.dart';
+import 'package:carrot_feirinha/src/components/inputs/price_quantity_input_row.dart';
+import 'package:carrot_feirinha/src/components/inputs/product_category_input.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app.dart';
+import '../../components/inputs/product_imagem_input.dart';
 
 class FormProductPage extends StatefulWidget {
   const FormProductPage({super.key});
@@ -15,11 +15,13 @@ class FormProductPage extends StatefulWidget {
 }
 
 class _FormProductPageState extends State<FormProductPage> {
+  final _controllerProductName = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           top: 40,
           bottom: 16,
           left: 24,
@@ -30,9 +32,11 @@ class _FormProductPageState extends State<FormProductPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Produto",
-                  style: AppTextStyles.h3,
+                const Expanded(
+                  child: Text(
+                    "Produto",
+                    style: AppTextStyles.h3,
+                  ),
                 ),
                 IconButton(
                   onPressed: () {
@@ -45,19 +49,23 @@ class _FormProductPageState extends State<FormProductPage> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 64,
             ),
-            InputImage(),
-            DefaultInputName(),
-            InputClassification(),
-            MultipleInputs(),
-            SizedBox(
+            const ProductImageInput(),
+            CommonInput(
+              controller: _controllerProductName,
+              label: "Nome",
+              hintText: "Ex: Laranja",
+            ),
+            const ProductCategoryInput(),
+            const PriceQuantityInputRow(),
+            const SizedBox(
               height: 24,
             ),
             CustomButton(
               label: "Adicionar",
-              onPressed: () {},
+              onTap: () {},
             ),
           ],
         ),

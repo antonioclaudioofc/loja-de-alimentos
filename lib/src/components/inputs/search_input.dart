@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../app/app.dart';
 
-class InputSearch extends StatelessWidget {
-  const InputSearch({super.key});
+class SearchInput extends StatefulWidget {
+  const SearchInput({Key? key, required this.controller}) : super(key: key);
 
+  final TextEditingController controller;
+
+  @override
+  State<SearchInput> createState() => _SearchInputState();
+}
+
+class _SearchInputState extends State<SearchInput> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,7 +19,8 @@ class InputSearch extends StatelessWidget {
         horizontal: 24,
       ),
       child: TextField(
-        decoration: InputDecoration(
+        controller: widget.controller,
+        decoration: const InputDecoration(
           filled: true,
           fillColor: AppColors.gray100,
           border: OutlineInputBorder(

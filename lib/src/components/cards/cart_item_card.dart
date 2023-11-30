@@ -1,18 +1,17 @@
 import 'package:carrot_feirinha/src/app/app.dart';
-import 'package:carrot_feirinha/src/app/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class ItemCart extends StatefulWidget {
-  const ItemCart({super.key});
+class CartItemCard extends StatefulWidget {
+  const CartItemCard({super.key});
 
   @override
-  State<ItemCart> createState() => _ItemCartState();
+  State<CartItemCard> createState() => _CartItemCardState();
 }
 
-class _ItemCartState extends State<ItemCart> {
+class _CartItemCardState extends State<CartItemCard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Row(
         children: [
@@ -27,7 +26,7 @@ class _ItemCartState extends State<ItemCart> {
             children: [
               Text(
                 "Cenoura",
-                style: AppTextStyles.labelInput.copyWith(
+                style: AppTextStyles.h4.copyWith(
                   color: AppColors.black,
                 ),
               ),
@@ -48,7 +47,7 @@ class _ItemCartState extends State<ItemCart> {
                   decoration: ShapeDecoration(
                     color: AppColors.gray50,
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(
+                      side: const BorderSide(
                         width: 1,
                         color: AppColors.gray200,
                       ),
@@ -58,7 +57,7 @@ class _ItemCartState extends State<ItemCart> {
                   child: Center(
                     child: InkWell(
                       onTap: () {},
-                      child: Icon(Icons.add),
+                      child: const Icon(Icons.add),
                     ),
                   ),
                 ),
@@ -66,14 +65,14 @@ class _ItemCartState extends State<ItemCart> {
                   child: TextField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                      hintStyle: AppTextStyles.labelInput.copyWith(
+                      hintStyle: AppTextStyles.h4.copyWith(
                         color: AppColors.black,
                       ),
                       hintText: '2',
                       border: InputBorder.none,
                       filled: true,
                       fillColor: AppColors.gray50,
-                      contentPadding: EdgeInsets.all(2.0),
+                      contentPadding: const EdgeInsets.all(2.0),
                     ),
                   ),
                 ),
@@ -83,7 +82,7 @@ class _ItemCartState extends State<ItemCart> {
                   decoration: ShapeDecoration(
                     color: AppColors.gray50,
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(
+                      side: const BorderSide(
                         width: 1,
                         color: AppColors.gray200,
                       ),
@@ -93,7 +92,7 @@ class _ItemCartState extends State<ItemCart> {
                   child: Center(
                     child: InkWell(
                       onTap: () {},
-                      child: Icon(Icons.remove),
+                      child: const Icon(Icons.remove),
                     ),
                   ),
                 ),
@@ -103,10 +102,10 @@ class _ItemCartState extends State<ItemCart> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Icon(Icons.close),
+              const Icon(Icons.close),
               Text(
                 "R\$ 1,50",
-                style: AppTextStyles.labelInput.copyWith(
+                style: AppTextStyles.h4.copyWith(
                   color: AppColors.black,
                 ),
               ),

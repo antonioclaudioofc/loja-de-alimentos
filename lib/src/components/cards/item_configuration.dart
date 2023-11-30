@@ -1,8 +1,9 @@
-import 'package:carrot_feirinha/src/app/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class ItemConfiguration extends StatelessWidget {
-  const ItemConfiguration({
+import '../../app/app_text_styles.dart';
+
+class SettingsItemCard extends StatelessWidget {
+  const SettingsItemCard({
     Key? key,
     required this.label,
     required this.iconleft,
@@ -17,9 +18,9 @@ class ItemConfiguration extends StatelessWidget {
       leading: iconleft,
       title: Text(
         label,
-        style: AppTextStyles.subtitle,
+        style: AppTextStyles.h3,
       ),
-      trailing: Icon(
+      trailing: const Icon(
         Icons.keyboard_arrow_right_outlined,
       ),
       onTap: () {},

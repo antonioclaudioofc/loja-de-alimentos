@@ -1,18 +1,25 @@
 import 'package:carrot_feirinha/src/app/app.dart';
-import 'package:carrot_feirinha/src/shared/components/card_classification.dart';
-import 'package:carrot_feirinha/src/shared/components/input_search.dart';
+import 'package:carrot_feirinha/src/components/cards/varied_item_card.dart';
+import 'package:carrot_feirinha/src/components/inputs/search_input.dart';
 import 'package:flutter/material.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
+
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  final _controllerSearch = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(
+          const Padding(
+            padding: EdgeInsets.only(
               top: 40,
               bottom: 32,
             ),
@@ -21,25 +28,25 @@ class SearchPage extends StatelessWidget {
               style: AppTextStyles.h3,
             ),
           ),
-          InputSearch(),
-          SizedBox(
+          SearchInput(controller: _controllerSearch),
+          const SizedBox(
             height: 20,
           ),
-          Wrap(
+          const Wrap(
             spacing: 24,
             runSpacing: 20,
             children: [
-              CardClassification(
+              VariedItemCard(
                 urlImage: "assets/images/vegetais.png",
                 label: "Vegetais",
                 color: AppColors.green100,
               ),
-              CardClassification(
+              VariedItemCard(
                 urlImage: "assets/images/frutas.png",
                 label: "Frutas",
                 color: AppColors.yellow500,
               ),
-              CardClassification(
+              VariedItemCard(
                 urlImage: "assets/images/carnes.png",
                 label: "Carnes",
                 color: AppColors.red500,

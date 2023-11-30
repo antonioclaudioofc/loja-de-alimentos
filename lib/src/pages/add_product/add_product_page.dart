@@ -1,6 +1,7 @@
 import 'package:carrot_feirinha/src/app/app.dart';
-import 'package:carrot_feirinha/src/shared/components/update_product.dart';
 import 'package:flutter/material.dart';
+
+import '../../components/cards/editable_item_card.dart';
 
 class AddProductPage extends StatefulWidget {
   const AddProductPage({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _AddProductPageState extends State<AddProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         padding: EdgeInsets.symmetric(
           vertical: 40,
         ),
@@ -21,25 +22,25 @@ class _AddProductPageState extends State<AddProductPage> {
           spacing: 4,
           runSpacing: 10,
           children: [
-            UpdateProduct(
+            EditableItemCard(
               urlImage: "assets/images/abacate.png",
               price: 12,
               nameProduct: "Abacate",
               quantityProduct: 22,
             ),
-            UpdateProduct(
+            EditableItemCard(
               urlImage: "assets/images/abacate.png",
               price: 12,
               nameProduct: "Abacate",
               quantityProduct: 22,
             ),
-            UpdateProduct(
+            EditableItemCard(
               urlImage: "assets/images/abacate.png",
               price: 12,
               nameProduct: "Abacate",
               quantityProduct: 22,
             ),
-            UpdateProduct(
+            EditableItemCard(
               urlImage: "assets/images/abacate.png",
               price: 12,
               nameProduct: "Abacate",
@@ -48,12 +49,11 @@ class _AddProductPageState extends State<AddProductPage> {
           ],
         ),
       ),
-      floatingActionButton: Container(
+      floatingActionButton: SizedBox(
         width: 124,
         height: 44,
         child: InkWell(
           onTap: () {
-            print("Deveria ir");
             Navigator.pushNamed(
               context,
               PagePaths.formProduct,
@@ -67,11 +67,11 @@ class _AddProductPageState extends State<AddProductPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.add,
                     color: AppColors.gray50,
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Text(
                     "Adicionar",
                     style: AppTextStyles.h4.copyWith(

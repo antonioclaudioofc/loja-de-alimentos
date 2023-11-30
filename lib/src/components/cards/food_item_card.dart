@@ -1,9 +1,8 @@
 import 'package:carrot_feirinha/src/app/app.dart';
-import 'package:carrot_feirinha/src/app/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class UpdateProduct extends StatefulWidget {
-  const UpdateProduct({
+class FoodItemCard extends StatelessWidget {
+  const FoodItemCard({
     Key? key,
     required this.urlImage,
     required this.price,
@@ -17,23 +16,18 @@ class UpdateProduct extends StatefulWidget {
   final double quantityProduct;
 
   @override
-  State<UpdateProduct> createState() => _UpdateProductState();
-}
-
-class _UpdateProductState extends State<UpdateProduct> {
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 8.0,
       ),
       child: Container(
-        width: 160,
+        width: 196,
         height: 240,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(
+            side: const BorderSide(
               width: 1,
               color: Colors.white,
             ),
@@ -46,7 +40,7 @@ class _UpdateProductState extends State<UpdateProduct> {
           children: [
             Center(
               child: Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 16,
                   bottom: 20,
                 ),
@@ -54,7 +48,7 @@ class _UpdateProductState extends State<UpdateProduct> {
                 height: 74,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(widget.urlImage),
+                    image: AssetImage(urlImage),
                     fit: BoxFit.fitWidth,
                   ),
                 ),
@@ -68,14 +62,14 @@ class _UpdateProductState extends State<UpdateProduct> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.nameProduct,
-                    style: AppTextStyles.subtitle,
+                    nameProduct,
+                    style: AppTextStyles.h4,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                   Text(
-                    "${widget.quantityProduct} unidades, preço",
+                    "$quantityProduct unidades, preço",
                     style: AppTextStyles.h4.copyWith(
                       color: AppColors.gray500,
                     ),
@@ -83,36 +77,39 @@ class _UpdateProductState extends State<UpdateProduct> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 16,
               ),
-              child: Text(
-                "R\$ ${widget.price}0",
-                style: AppTextStyles.subtitle,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                right: 16,
-              ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.edit,
-                    color: AppColors.yellow500,
+                  Text(
+                    "R\$ $price",
+                    style: AppTextStyles.h4,
                   ),
-                  Icon(
-                    Icons.delete,
-                    color: AppColors.red500,
-                  )
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.green300,
+                      minimumSize: const Size(36, 36),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                          8.0,
+                        ),
+                      ),
+                    ),
+                    child: const Icon(
+                      Icons.add,
+                      color: AppColors.gray50,
+                    ),
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -1,8 +1,8 @@
 import 'package:carrot_feirinha/src/app/app.dart';
 import 'package:flutter/material.dart';
 
-class LabelTitleProduct extends StatelessWidget {
-  const LabelTitleProduct({
+class OfferCard extends StatelessWidget {
+  const OfferCard({
     Key? key,
     required this.label,
     required this.labelAction,

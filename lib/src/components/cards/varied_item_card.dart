@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../app/app.dart';
+import '../../app/app_text_styles.dart';
 
-class CardClassification extends StatelessWidget {
-  const CardClassification({
+class VariedItemCard extends StatelessWidget {
+  const VariedItemCard({
     Key? key,
     required this.urlImage,
     required this.label,
     required this.color,
-  });
+  }) : super(key: key);
 
   final String urlImage;
   final String label;
@@ -38,14 +38,12 @@ class CardClassification extends StatelessWidget {
               height: 96,
               fit: BoxFit.fitWidth,
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             Text(
               label,
-              style: AppTextStyles.labelInput.copyWith(
-                color: AppColors.black,
-              ),
+              style: AppTextStyles.h4,
             ),
           ],
         ),

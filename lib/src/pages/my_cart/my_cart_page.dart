@@ -1,8 +1,9 @@
-import 'package:carrot_feirinha/src/app/app_colors.dart';
-import 'package:carrot_feirinha/src/app/app_text_styles.dart';
-import 'package:carrot_feirinha/src/shared/components/custom_button.dart';
-import 'package:carrot_feirinha/src/shared/components/item_cart.dart';
 import 'package:flutter/material.dart';
+
+import '../../app/app_colors.dart';
+import '../../app/app_text_styles.dart';
+import '../../components/buttons/custom_button.dart';
+import '../../components/cards/cart_item_card.dart';
 
 class MyCartPage extends StatelessWidget {
   const MyCartPage({super.key});
@@ -12,36 +13,36 @@ class MyCartPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
-          Text(
+          const Text(
             "Meu Carrinho",
             style: AppTextStyles.h3,
           ),
-          Divider(),
+          const Divider(),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 24,
             ),
             child: Column(
               children: [
-                ItemCart(),
-                Divider(
+                const CartItemCard(),
+                const Divider(
                   color: AppColors.gray200,
                 ),
-                ItemCart(),
-                Divider(
+                const CartItemCard(),
+                const Divider(
                   color: AppColors.gray200,
                 ),
-                ItemCart(),
-                Divider(
+                const CartItemCard(),
+                const Divider(
                   color: AppColors.gray200,
                 ),
                 CustomButton(
-                  onPressed: () {},
-                  label: "Finalizar",
-                )
+                  label: "Finalizae",
+                  onTap: () {},
+                ),
               ],
             ),
           ),

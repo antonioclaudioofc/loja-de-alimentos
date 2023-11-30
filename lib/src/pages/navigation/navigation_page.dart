@@ -17,11 +17,11 @@ class NavigationPage extends StatefulWidget {
 class _NavigationPageState extends State<NavigationPage> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
-    HomePage(),
-    SearchPage(),
-    AddProductPage(),
-    MyCartPage(),
-    AccountPage(),
+    const HomePage(),
+    const SearchPage(),
+    const AddProductPage(),
+    const MyCartPage(),
+    const AccountPage(),
   ];
 
   void onTabTapped(int index) {
@@ -41,11 +41,11 @@ class _NavigationPageState extends State<NavigationPage> {
         onTap: onTabTapped,
         showUnselectedLabels: true,
         currentIndex: _currentIndex,
-        selectedIconTheme: IconThemeData(
+        selectedIconTheme: const IconThemeData(
           color: AppColors.green400,
         ),
         backgroundColor: AppColors.gray100,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,

@@ -1,14 +1,14 @@
 import 'package:carrot_feirinha/src/app/app.dart';
 import 'package:flutter/material.dart';
 
-class InputClassification extends StatefulWidget {
-  const InputClassification({Key? key}) : super(key: key);
+class ProductCategoryInput extends StatefulWidget {
+  const ProductCategoryInput({Key? key}) : super(key: key);
 
   @override
-  State<InputClassification> createState() => _InputClassificationState();
+  State<ProductCategoryInput> createState() => _ProductCategoryInputState();
 }
 
-class _InputClassificationState extends State<InputClassification> {
+class _ProductCategoryInputState extends State<ProductCategoryInput> {
   List<String> list = <String>[
     '- Selecione a classificação -',
     'Frutas',
@@ -22,28 +22,28 @@ class _InputClassificationState extends State<InputClassification> {
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      SizedBox(
+      const SizedBox(
         height: 12,
       ),
       Text(
         "Classificação",
-        style: AppTextStyles.labelInput.copyWith(
+        style: AppTextStyles.h4.copyWith(
           color: AppColors.gray900,
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 6,
       ),
       SizedBox(
         width: double.infinity,
         child: DropdownButtonFormField<String>(
           isExpanded: true,
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_drop_down,
           ),
           decoration: InputDecoration(
             border: OutlineInputBorder(
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: AppColors.gray200,
                 width: 1,
               ),

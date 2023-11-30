@@ -1,9 +1,8 @@
 import 'package:carrot_feirinha/src/app/app.dart';
-import 'package:carrot_feirinha/src/app/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class CardProduct extends StatefulWidget {
-  const CardProduct({
+class EditableItemCard extends StatefulWidget {
+  const EditableItemCard({
     Key? key,
     required this.urlImage,
     required this.price,
@@ -17,10 +16,10 @@ class CardProduct extends StatefulWidget {
   final double quantityProduct;
 
   @override
-  State<CardProduct> createState() => _CardProductState();
+  State<EditableItemCard> createState() => _EditableItemCardState();
 }
 
-class _CardProductState extends State<CardProduct> {
+class _EditableItemCardState extends State<EditableItemCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,12 +27,12 @@ class _CardProductState extends State<CardProduct> {
         horizontal: 8.0,
       ),
       child: Container(
-        width: 196,
+        width: 160,
         height: 240,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(
+            side: const BorderSide(
               width: 1,
               color: Colors.white,
             ),
@@ -46,7 +45,7 @@ class _CardProductState extends State<CardProduct> {
           children: [
             Center(
               child: Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 16,
                   bottom: 20,
                 ),
@@ -69,9 +68,9 @@ class _CardProductState extends State<CardProduct> {
                 children: [
                   Text(
                     widget.nameProduct,
-                    style: AppTextStyles.subtitle,
+                    style: AppTextStyles.h4,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                   Text(
@@ -83,39 +82,36 @@ class _CardProductState extends State<CardProduct> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 16,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "R\$ ${widget.price}0",
-                    style: AppTextStyles.subtitle,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.green300,
-                      minimumSize: Size(36, 36),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                          8.0,
-                        ),
-                      ),
-                    ),
-                    child: Icon(
-                      Icons.add,
-                      color: AppColors.gray50,
-                    ),
-                  ),
-                ],
+              child: Text(
+                "R\$ ${widget.price}0",
+                style: AppTextStyles.h4,
               ),
             ),
+            const Padding(
+              padding: EdgeInsets.only(
+                right: 16,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(
+                    Icons.edit,
+                    color: AppColors.yellow500,
+                  ),
+                  Icon(
+                    Icons.delete,
+                    color: AppColors.red500,
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

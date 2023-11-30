@@ -1,8 +1,8 @@
 import 'package:carrot_feirinha/src/app/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class InputImage extends StatelessWidget {
-  const InputImage({super.key});
+class ProductImageInput extends StatelessWidget {
+  const ProductImageInput({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class InputImage extends StatelessWidget {
           borderRadius:
               BorderRadius.circular(64), // Ajuste o valor conforme necessário
         ),
-        child: Align(
+        child: const Align(
           alignment: Alignment.bottomRight,
           child: Icon(
             Icons.camera_alt,

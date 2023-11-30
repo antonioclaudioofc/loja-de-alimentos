@@ -1,8 +1,9 @@
-import 'package:carrot_feirinha/src/app/app.dart';
-import 'package:carrot_feirinha/src/app/app_text_styles.dart';
-import 'package:carrot_feirinha/src/shared/components/button_logout.dart';
-import 'package:carrot_feirinha/src/shared/components/item_configuration.dart';
+import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
 import 'package:flutter/material.dart';
+
+import '../../app/app_colors.dart';
+import '../../app/app_text_styles.dart';
+import '../../components/cards/item_configuration.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -12,7 +13,7 @@ class AccountPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           Padding(
@@ -29,18 +30,19 @@ class AccountPage extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Antonio Claudio",
                       style: AppTextStyles.h3,
                     ),
                     Text(
                       "claudioteste@gmail.com",
-                      style: AppTextStyles.labelInput.copyWith(
+                      style: AppTextStyles.h4.copyWith(
                         color: AppColors.gray400,
                       ),
                     ),
@@ -49,26 +51,35 @@ class AccountPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Divider(),
-          ItemConfiguration(
+          const Divider(),
+          const SettingsItemCard(
             label: "Notificações",
             iconleft: Icon(Icons.notifications),
           ),
-          Divider(),
-          ItemConfiguration(
+          const Divider(),
+          const SettingsItemCard(
             label: "Ajuda",
             iconleft: Icon(Icons.help_outline),
           ),
-          Divider(),
-          ItemConfiguration(
+          const Divider(),
+          const SettingsItemCard(
             label: "Sobre",
             iconleft: Icon(Icons.info_outline_rounded),
           ),
-          Divider(),
-          ButtonLogout(),
+          const Divider(),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+            ),
+            child: CustomButton(
+              label: "Sair",
+              onTap: () {},
+              logout: true,
+            ),
+          )
         ],
       ),
     );

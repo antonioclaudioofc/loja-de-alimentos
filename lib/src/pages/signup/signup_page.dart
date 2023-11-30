@@ -1,15 +1,23 @@
 import 'package:carrot_feirinha/src/app/app.dart';
-import 'package:carrot_feirinha/src/app/app_routes.dart';
-import 'package:carrot_feirinha/src/pages/components/header_title.dart';
-import 'package:carrot_feirinha/src/pages/components/label_togle_login.dart';
-import 'package:carrot_feirinha/src/shared/components/app_logo.dart';
-import 'package:carrot_feirinha/src/shared/components/custom_button.dart';
-import 'package:carrot_feirinha/src/shared/components/default_form_field.dart';
-import 'package:carrot_feirinha/src/shared/components/password_form_field.dart';
+import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
+import 'package:carrot_feirinha/src/components/header_logo.dart';
+import 'package:carrot_feirinha/src/components/inputs/common_input.dart';
 import 'package:flutter/material.dart';
 
-class SignupPage extends StatelessWidget {
+import '../../components/app_logo.dart';
+import '../../components/create_or_login_account_button.dart';
+
+class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
+
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  final _controllerName = TextEditingController();
+  final _controllerEmail = TextEditingController();
+  final _controllerPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,55 +25,69 @@ class SignupPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 24,
           ),
           child: Column(
             children: [
               const AppLogo(),
-              HeaderTitle(
+              const HeaderLogo(
                 title: "Cadastre-se",
               ),
               Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 24,
                 ),
                 child: Form(
                   child: Column(
                     children: [
-                      DefaultFormField(
+                      CommonInput(
+                        controller: _controllerName,
                         label: "Nome",
                         hintText: "Digite seu nome",
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 16,
                       ),
-                      DefaultFormField(
+                      CommonInput(
+                        controller: _controllerEmail,
                         label: "Email",
-                        hintText: "Digite seu email",
+                        hintText: "exemplo@gmail.com",
+                        icon: const Icon(
+                          Icons.check,
+                          color: AppColors.green400,
+                        ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 16,
                       ),
-                      PasswordFormField(),
-                      SizedBox(
+                      CommonInput(
+                        controller: _controllerPassword,
+                        label: "Senha",
+                        hintText: "***********",
+                        icon: const Icon(
+                          Icons.disabled_visible_outlined,
+                        ),
+                        obscureText: true,
+                      ),
+                      const SizedBox(
                         height: 16,
                       ),
                       CustomButton(
                         label: "Cadastrar",
-                        onPressed: () {
+                        onTap: () {
                           Navigator.pushNamed(
                             context,
                             PagePaths.navigationPath,
                           );
                         },
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 6,
                       ),
-                      LabelTogleLogin(
+                      CreateOrLoginAccountButton(
                         label: "Já possui conta? ",
-                        labelLink: "Entrar",
+                        link: "Entrar",
                         onPressed: () {
                           Navigator.pushNamed(
                             context,

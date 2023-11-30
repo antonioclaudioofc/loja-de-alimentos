@@ -1,8 +1,8 @@
 import 'package:carrot_feirinha/src/app/app.dart';
 import 'package:flutter/material.dart';
 
-class CardTopic extends StatelessWidget {
-  const CardTopic({
+class CategoryCard extends StatelessWidget {
+  const CategoryCard({
     Key? key,
     required this.urlImage,
     required this.label,
@@ -22,7 +22,7 @@ class CardTopic extends StatelessWidget {
       child: Container(
         width: 256,
         height: 96,
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           left: 16,
         ),
         decoration: ShapeDecoration(
@@ -43,7 +43,7 @@ class CardTopic extends StatelessWidget {
               width: 64,
               height: 64,
             ),
-            SizedBox(
+            const SizedBox(
               width: 16,
             ),
             Text(

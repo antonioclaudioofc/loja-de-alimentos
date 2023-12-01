@@ -4,7 +4,7 @@ import 'package:carrot_feirinha/src/components/inputs/price_quantity_input_row.d
 import 'package:carrot_feirinha/src/components/inputs/product_category_input.dart';
 import 'package:flutter/material.dart';
 
-import '../../app/app.dart';
+import '../../style/exports.dart';
 import '../../components/inputs/product_imagem_input.dart';
 
 class FormProductPage extends StatefulWidget {
@@ -32,10 +32,12 @@ class _FormProductPageState extends State<FormProductPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Expanded(
+                Expanded(
                   child: Text(
                     "Produto",
-                    style: AppTextStyles.h3,
+                    style: AppTextStyles.h3.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
                 IconButton(

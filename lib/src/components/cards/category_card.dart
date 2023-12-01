@@ -1,4 +1,4 @@
-import 'package:carrot_feirinha/src/app/app.dart';
+import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:flutter/material.dart';
 
 class CategoryCard extends StatelessWidget {

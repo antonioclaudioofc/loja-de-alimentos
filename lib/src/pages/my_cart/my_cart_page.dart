@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../app/app_colors.dart';
-import '../../app/app_text_styles.dart';
+import '../../style/app_colors.dart';
+import '../../style/app_text_styles.dart';
 import '../../components/buttons/custom_button.dart';
 import '../../components/cards/cart_item_card.dart';
 
@@ -40,7 +40,7 @@ class MyCartPage extends StatelessWidget {
                   color: AppColors.gray200,
                 ),
                 CustomButton(
-                  label: "Finalizae",
+                  label: "Finalizar",
                   onTap: () {},
                 ),
               ],

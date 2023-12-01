@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 
-import '../../app/app_colors.dart';
-import '../../app/app_text_styles.dart';
+import '../../style/app_colors.dart';
+import '../../style/app_text_styles.dart';
 
 class CustomButton extends StatefulWidget {
   const CustomButton({
     Key? key,
     required this.label,
     required this.onTap,
-    this.color,
+    this.color = AppColors.green400,
     this.icon,
     this.logout = false,
+    this.isGoogle = false,
   }) : super(key: key);
 
   final String label;
   final Color? color;
   final Icon? icon;
   final bool logout;
+  final bool isGoogle;
   final void Function() onTap;
 
   @override
@@ -30,9 +32,11 @@ class _CustomButtonState extends State<CustomButton> {
       onTap: widget.onTap,
       child: Container(
         width: double.infinity,
-        height: 56,
+        padding: const EdgeInsets.symmetric(
+          vertical: 12,
+        ),
         decoration: ShapeDecoration(
-          color: widget.logout ? AppColors.gray200 : AppColors.green400,
+          color: widget.color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
@@ -41,6 +45,18 @@ class _CustomButtonState extends State<CustomButton> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              if (widget.isGoogle)
+                const Row(
+                  children: [
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Icon(
+                      Icons.g_mobiledata_outlined,
+                      color: AppColors.gray50,
+                    ),
+                  ],
+                ),
               if (widget.logout)
                 const Row(
                   children: [

@@ -2,7 +2,7 @@ import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
 import 'package:carrot_feirinha/src/components/inputs/common_input.dart';
 import 'package:flutter/material.dart';
 
-import '../app/app.dart';
+import '../style/exports.dart';
 
 class FormLogin extends StatefulWidget {
   const FormLogin({super.key});
@@ -34,22 +34,20 @@ class _FormLoginState extends State<FormLogin> {
             label: "Senha",
             hintText: "***********",
             icon: const Icon(
-              Icons.disabled_visible_outlined,
+              Icons.visibility_off_outlined,
+              color: AppColors.gray400,
             ),
             obscureText: true,
           ),
           const SizedBox(
             height: 6,
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 24),
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                "Esqueceu a senha?",
-                style: AppTextStyles.h5.copyWith(
-                  color: AppColors.gray500,
-                ),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              "Esqueceu a senha?",
+              style: AppTextStyles.h5.copyWith(
+                color: AppColors.gray500,
               ),
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../app/app.dart';
+import '../../style/exports.dart';
 
 class SearchInput extends StatefulWidget {
   const SearchInput({Key? key, required this.controller}) : super(key: key);

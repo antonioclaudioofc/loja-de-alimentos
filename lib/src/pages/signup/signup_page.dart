@@ -1,4 +1,4 @@
-import 'package:carrot_feirinha/src/app/app.dart';
+import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
 import 'package:carrot_feirinha/src/components/header_logo.dart';
 import 'package:carrot_feirinha/src/components/inputs/common_input.dart';

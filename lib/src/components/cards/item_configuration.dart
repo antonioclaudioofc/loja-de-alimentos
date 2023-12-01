@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../app/app_text_styles.dart';
+import '../../style/app_text_styles.dart';
 
 class SettingsItemCard extends StatelessWidget {
   const SettingsItemCard({

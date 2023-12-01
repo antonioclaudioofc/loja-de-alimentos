@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../app/app_colors.dart';
-import '../app/app_text_styles.dart';
+import '../style/app_colors.dart';
+import '../style/app_text_styles.dart';
 import 'app_logo.dart';
 
 class LocationLogo extends StatelessWidget {

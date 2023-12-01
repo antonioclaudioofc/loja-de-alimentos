@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppColors extends ChangeNotifier {
+class AppColors{
   static const white = Color(0xFFFFFFFF);
 
   static const black = Color(0xFF260303);
@@ -41,4 +41,5 @@ class AppColors extends ChangeNotifier {
   static const yellow500 = Color(0xFFE9A925);
   static const orange500 = Color(0xFFF3603F);
   static const red500 = Color(0xFFF7A593);
+  static const blue500 = Color(0xFF5383EC);
 }

@@ -1,4 +1,4 @@
-import 'package:carrot_feirinha/src/app/app.dart';
+import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:flutter/material.dart';
 
 class FoodItemCard extends StatelessWidget {
@@ -91,20 +91,21 @@ class FoodItemCard extends StatelessWidget {
                     "R\$ $price",
                     style: AppTextStyles.h4,
                   ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.green300,
-                      minimumSize: const Size(36, 36),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                          8.0,
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: 44,
+                      height: 44,
+                      decoration: ShapeDecoration(
+                        color: AppColors.green300,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(17),
                         ),
                       ),
-                    ),
-                    child: const Icon(
-                      Icons.add,
-                      color: AppColors.gray50,
+                      child: Icon(
+                        Icons.add,
+                        color: AppColors.gray50,
+                      ),
                     ),
                   ),
                 ],

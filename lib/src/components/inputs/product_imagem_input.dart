@@ -1,4 +1,4 @@
-import 'package:carrot_feirinha/src/app/app_colors.dart';
+import 'package:carrot_feirinha/src/style/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ProductImageInput extends StatelessWidget {

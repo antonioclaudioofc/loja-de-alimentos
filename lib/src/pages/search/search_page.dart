@@ -1,4 +1,4 @@
-import 'package:carrot_feirinha/src/app/app.dart';
+import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:carrot_feirinha/src/components/cards/varied_item_card.dart';
 import 'package:carrot_feirinha/src/components/inputs/search_input.dart';
 import 'package:flutter/material.dart';

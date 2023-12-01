@@ -1,4 +1,4 @@
-import 'package:carrot_feirinha/src/app/app.dart';
+import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:flutter/material.dart';
 
 class CommonInput extends StatefulWidget {
@@ -33,7 +33,9 @@ class _CommonInputState extends State<CommonInput> {
       children: [
         Text(
           widget.label,
-          style: AppTextStyles.h4,
+          style: AppTextStyles.h4.copyWith(
+            color: AppColors.gray500,
+          ),
           textAlign: TextAlign.start,
         ),
         TextField(
@@ -44,7 +46,9 @@ class _CommonInputState extends State<CommonInput> {
             prefixText: widget.prefixText,
             suffixIcon: widget.icon,
             hintText: widget.hintText,
-            hintStyle: AppTextStyles.h3,
+            hintStyle: AppTextStyles.h3.copyWith(
+              color: AppColors.gray600,
+            ),
             border: const UnderlineInputBorder(
               borderSide: BorderSide(
                 color: AppColors.gray300,

@@ -78,6 +78,7 @@ class AccountPage extends StatelessWidget {
               label: "Sair",
               onTap: () {},
               logout: true,
+              color: AppColors.gray200,
             ),
           )
         ],

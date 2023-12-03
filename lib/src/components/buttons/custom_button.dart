@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../style/app_colors.dart';
 import '../../style/app_text_styles.dart';
@@ -46,14 +47,14 @@ class _CustomButtonState extends State<CustomButton> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               if (widget.isGoogle)
-                const Row(
+                Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 16,
                     ),
-                    Icon(
-                      Icons.g_mobiledata_outlined,
-                      color: AppColors.gray50,
+                    SvgPicture.asset(
+                      "assets/images/icon_google.svg",
+                      height: 20,
                     ),
                   ],
                 ),

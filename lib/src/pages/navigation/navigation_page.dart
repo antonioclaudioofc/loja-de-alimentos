@@ -60,7 +60,7 @@ class _NavigationPageState extends State<NavigationPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.add,
+              Icons.add_box_outlined,
             ),
             label: "Adicionar",
           ),

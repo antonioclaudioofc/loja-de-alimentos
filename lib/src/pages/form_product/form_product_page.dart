@@ -30,24 +30,26 @@ class _FormProductPageState extends State<FormProductPage> {
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Expanded(
                   child: Text(
                     "Produto",
                     style: AppTextStyles.h3.copyWith(
                       fontWeight: FontWeight.w700,
+                      // backgroundColor: AppColors.black,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 IconButton(
                   onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      PagePaths.navigationPath,
-                    );
+                    Navigator.pop(context);
                   },
-                  icon: Icon(Icons.close),
+                  icon: const Icon(
+                    Icons.close,
+                    color: AppColors.orange500,
+                  ),
                 ),
               ],
             ),

@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 CategoryCard(
                   urlImage: "assets/images/paes.png",
-                  label: "Paẽs",
+                  label: "Pães",
                   color: AppColors.orange500.withOpacity(0.5),
                 ),
               ],

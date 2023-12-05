@@ -18,6 +18,8 @@ class _SignupPageState extends State<SignupPage> {
   final _controllerName = TextEditingController();
   final _controllerEmail = TextEditingController();
   final _controllerPassword = TextEditingController();
+  final _controllerPasswordConfirm = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -64,14 +66,29 @@ class _SignupPageState extends State<SignupPage> {
                       CommonInput(
                         controller: _controllerPassword,
                         label: "Senha",
-                        hintText: "***********",
+                        hintText: "Insira sua senha",
                         icon: const Icon(
-                          Icons.disabled_visible_outlined,
+                          Icons.visibility_off_outlined,
+                          color: AppColors.gray500,
                         ),
                         obscureText: true,
                       ),
                       const SizedBox(
                         height: 16,
+                      ),
+                      CommonInput(
+                        controller: _controllerPasswordConfirm,
+                        label: "Confirme sua senha",
+                        hintText: "Insira sua senha novamente",
+                        icon: const Icon(
+                          Icons.visibility_off_outlined,
+                          color: AppColors.gray500,
+                        ),
+                        onPressed: () {},
+                        obscureText: true,
+                      ),
+                      const SizedBox(
+                        height: 24,
                       ),
                       CustomButton(
                         label: "Cadastrar",
@@ -83,7 +100,7 @@ class _SignupPageState extends State<SignupPage> {
                         },
                       ),
                       const SizedBox(
-                        height: 6,
+                        height: 8,
                       ),
                       CreateOrLoginAccountButton(
                         label: "Já possui conta? ",

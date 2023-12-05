@@ -1,6 +1,7 @@
 import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../route/app_routes.dart';
 import '../../style/app_colors.dart';
 import '../../style/app_text_styles.dart';
 import '../../components/cards/item_configuration.dart';
@@ -76,7 +77,12 @@ class AccountPage extends StatelessWidget {
             ),
             child: CustomButton(
               label: "Sair",
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  PagePaths.signinPath,
+                );
+              },
               logout: true,
               color: AppColors.gray200,
             ),

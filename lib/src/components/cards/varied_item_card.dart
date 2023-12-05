@@ -17,7 +17,7 @@ class VariedItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 144,
+      width: double.infinity,
       height: 176,
       decoration: ShapeDecoration(
         color: color.withOpacity(0.5),
@@ -34,8 +34,8 @@ class VariedItemCard extends StatelessWidget {
           children: [
             Image.asset(
               urlImage,
-              width: 96,
-              height: 96,
+              width: 112,
+              height: 112,
               fit: BoxFit.fitWidth,
             ),
             const SizedBox(

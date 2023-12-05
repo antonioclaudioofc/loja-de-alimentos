@@ -27,8 +27,8 @@ class _EditableItemCardState extends State<EditableItemCard> {
         horizontal: 8.0,
       ),
       child: Container(
-        width: 160,
-        height: 240,
+        // height: 180,
+        // height: double.infinity,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(

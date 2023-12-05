@@ -47,7 +47,7 @@ class _FormLoginState extends State<FormLogin> {
             child: Text(
               "Esqueceu a senha?",
               style: AppTextStyles.h5.copyWith(
-                color: AppColors.gray500,
+                color: AppColors.gray700,
               ),
             ),
           ),

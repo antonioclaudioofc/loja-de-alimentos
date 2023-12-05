@@ -9,7 +9,7 @@ class CustomButton extends StatefulWidget {
     Key? key,
     required this.label,
     required this.onTap,
-    this.color = AppColors.green400,
+    this.color = AppColors.green600,
     this.icon,
     this.logout = false,
     this.isGoogle = false,
@@ -39,7 +39,7 @@ class _CustomButtonState extends State<CustomButton> {
         decoration: ShapeDecoration(
           color: widget.color,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(12),
           ),
         ),
         child: Center(

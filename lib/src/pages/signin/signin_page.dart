@@ -42,7 +42,7 @@ class SigninPage extends StatelessWidget {
                 isGoogle: true,
               ),
               CreateOrLoginAccountButton(
-                label: "Não possui conta?",
+                label: "Não possui conta? ",
                 link: "Crie agora",
                 onPressed: () {
                   Navigator.pushNamed(

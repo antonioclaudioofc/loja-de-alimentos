@@ -1,3 +1,4 @@
+import 'package:carrot_feirinha/src/components/auth_check.dart';
 import 'package:flutter/material.dart';
 
 import 'route/app_routes.dart';

@@ -1,8 +1,11 @@
+import 'package:carrot_feirinha/src/services/auth_service.dart';
 import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
 import 'package:carrot_feirinha/src/components/header_logo.dart';
 import 'package:carrot_feirinha/src/components/inputs/common_input.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../components/app_logo.dart';
 import '../../components/create_or_login_account_button.dart';
@@ -15,11 +18,22 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  final _formKey = GlobalKey();
   final _controllerName = TextEditingController();
   final _controllerEmail = TextEditingController();
   final _controllerPassword = TextEditingController();
   final _controllerPasswordConfirm = TextEditingController();
 
+  createUserWithEmailAndPassword() async {
+    try {
+      await context.read<AuthService>().registerWithEmailAndPassword(
+            _controllerEmail.text,
+            _controllerPassword.text,
+          );
+    } catch (e) {
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +55,7 @@ class _SignupPageState extends State<SignupPage> {
                   vertical: 24,
                 ),
                 child: Form(
+                  key: _formKey,
                   child: Column(
                     children: [
                       CommonInput(
@@ -93,10 +108,7 @@ class _SignupPageState extends State<SignupPage> {
                       CustomButton(
                         label: "Cadastrar",
                         onTap: () {
-                          Navigator.pushNamed(
-                            context,
-                            PagePaths.navigationPath,
-                          );
+                          createUserWithEmailAndPassword();
                         },
                       ),
                       const SizedBox(

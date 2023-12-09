@@ -1,6 +1,7 @@
-import 'package:carrot_feirinha/src/components/auth_check.dart';
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 
+import 'model/user_model.dart';
 import 'route/app_routes.dart';
 
 class AppWidget extends StatelessWidget {
@@ -8,9 +9,12 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: routes,
+    return ScopedModel<UserModel>(
+      model: UserModel(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: routes,
+      ),
     );
   }
 }

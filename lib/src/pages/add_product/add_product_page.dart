@@ -21,8 +21,8 @@ class _AddProductPageState extends State<AddProductPage> {
         ),
         child: StaggeredGrid.count(
           crossAxisCount: 4,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
+          mainAxisSpacing: 2,
+          crossAxisSpacing: 2,
           children: const [
             StaggeredGridTile.count(
               crossAxisCellCount: 2,

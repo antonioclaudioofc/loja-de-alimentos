@@ -9,6 +9,20 @@ class QuantityCounterInput extends StatefulWidget {
 }
 
 class _QuantityCounterInputState extends State<QuantityCounterInput> {
+  int quantityProduct = 1;
+
+  void onIncremente() {
+    setState(() {
+      if (quantityProduct <= 9) quantityProduct++;
+    });
+  }
+
+  void onDecrement() {
+    setState(() {
+      if (quantityProduct >= 2) quantityProduct--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,11 +56,11 @@ class _QuantityCounterInputState extends State<QuantityCounterInput> {
                   Icons.add,
                   color: AppColors.green300,
                 ),
-                onPressed: () {},
+                onPressed: onIncremente,
               ),
-              const Text("1"),
+              Text(quantityProduct.toString()),
               IconButton(
-                onPressed: () {},
+                onPressed: onDecrement,
                 icon: const Icon(
                   Icons.remove,
                   color: AppColors.gray400,

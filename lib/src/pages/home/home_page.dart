@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 24,
           ),
-          SearchInput(controller: _controllerSearch),
+          // SearchInput(controller: _controllerSearch),
           const SizedBox(
             height: 24,
           ),

@@ -55,28 +55,25 @@ class ProductModel extends Model {
     }
   }
 
-  Future<List<Product>> loadProducts() async {
+  Future<void> loadProducts() async {
     CollectionReference recordsRef =
         FirebaseFirestore.instance.collection('products');
 
-    late final List<Product> products;
-
-    await recordsRef.get().then((QuerySnapshot snapshot) {
+    try {
+      QuerySnapshot snapshot = await recordsRef.get();
       products = snapshot.docs
           .map((doc) => Product(
                 doc['name'],
                 doc['img'],
                 doc['price'],
-                doc['quantityProduct'] ?? 0,
+                doc['quantity'] ?? 0,
                 doc['description'] ?? '',
-                doc['category'] ??'',
+                doc['category'] ?? '',
               ))
           .toList();
-    });
-
-    
-    print("Chamando a função ....");
-
-    return products;
+      notifyListeners();
+    } catch (e) {
+      print("Erro ao carregar produtos: $e");
+    }
   }
 }

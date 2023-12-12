@@ -24,15 +24,12 @@ class _AddProductPageState extends State<AddProductPage> {
 
   Future<void> _loadProducts() async {
     try {
-      List<Product> loadedProducts =
-          await ScopedModel.of<ProductModel>(context).loadProducts();
+      await ScopedModel.of<ProductModel>(context).loadProducts();
       setState(() {
-        products = loadedProducts;
-        print("Produtos: $products");
+        print("Produtos: ${ScopedModel.of<ProductModel>(context).products}");
       });
     } catch (error) {
       setState(() {
-        products = [];
         print("Erro ao carregar produtos: $error");
       });
     }
@@ -45,70 +42,87 @@ class _AddProductPageState extends State<AddProductPage> {
         padding: const EdgeInsets.symmetric(
           vertical: 40,
         ),
-        child: Column(
-          children: [
-            // Expanded(
-            //   child: GridView.count(
-            //     crossAxisCount: 2,
-            //     childAspectRatio: 0.71,
-            //     children: List.generate(products.length, (index) {
-            //       return EditableItemCard(
-            //         nameProduct: products[index].name,
-            //         price: products[index].price,
-            //         quantityProduct: products[index].quantityProduct,
-            //         urlImage: products[index].img,
-            //       );
-            //     }),
-            //   ),
-            // ),
-            StaggeredGrid.count(
-              crossAxisCount: 4,
-              mainAxisSpacing: 2,
-              crossAxisSpacing: 2,
-              children: const [
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 2,
-                  child: EditableItemCard(
-                    urlImage: "assets/images/abacate.png",
-                    price: 12,
-                    nameProduct: "Abacate",
-                    quantityProduct: 22,
-                  ),
+        child: ScopedModelDescendant<ProductModel>(
+          builder: (context, child, model) {
+            return Column(
+              children: [
+                Text("${model.products.length}"),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: model.products.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      leading: Image.network(model.products[index].img),
+                      title: Text(model.products[index].name),
+                      subtitle: Text(
+                          'Preço: ${model.products[index].price.toString()}'),
+                    );
+                  },
                 ),
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 2,
-                  child: EditableItemCard(
-                    urlImage: "assets/images/abacate.png",
-                    price: 12,
-                    nameProduct: "Abacate",
-                    quantityProduct: 22,
-                  ),
-                ),
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 2,
-                  child: EditableItemCard(
-                    urlImage: "assets/images/abacate.png",
-                    price: 12,
-                    nameProduct: "Abacate",
-                    quantityProduct: 22,
-                  ),
-                ),
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 2,
-                  child: EditableItemCard(
-                    urlImage: "assets/images/abacate.png",
-                    price: 12,
-                    nameProduct: "Abacate",
-                    quantityProduct: 22,
-                  ),
+                // Expanded(
+                //   child: GridView.count(
+                //     crossAxisCount: 2,
+                //     childAspectRatio: 0.71,
+                //     children: List.generate(products.length, (index) {
+                //       return EditableItemCard(
+                //         nameProduct: products[index].name,
+                //         price: products[index].price,
+                //         quantityProduct: products[index].quantityProduct,
+                //         urlImage: products[index].img,
+                //       );
+                //     }),
+                //   ),
+                // ),
+                StaggeredGrid.count(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 2,
+                  crossAxisSpacing: 2,
+                  children: const [
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 2,
+                      child: EditableItemCard(
+                        urlImage: "assets/images/abacate.png",
+                        price: 12,
+                        nameProduct: "Abacate",
+                        quantityProduct: 22,
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 2,
+                      child: EditableItemCard(
+                        urlImage: "assets/images/abacate.png",
+                        price: 12,
+                        nameProduct: "Abacate",
+                        quantityProduct: 22,
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 2,
+                      child: EditableItemCard(
+                        urlImage: "assets/images/abacate.png",
+                        price: 12,
+                        nameProduct: "Abacate",
+                        quantityProduct: 22,
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 2,
+                      child: EditableItemCard(
+                        urlImage: "assets/images/abacate.png",
+                        price: 12,
+                        nameProduct: "Abacate",
+                        quantityProduct: 22,
+                      ),
+                    ),
+                  ],
                 ),
               ],
-            ),
-          ],
+            );
+          },
         ),
       ),
       floatingActionButton: SizedBox(
@@ -116,6 +130,7 @@ class _AddProductPageState extends State<AddProductPage> {
         height: 44,
         child: InkWell(
           onTap: () {
+            print("Clicou");
             Navigator.pushNamed(
               context,
               PagePaths.formProduct,

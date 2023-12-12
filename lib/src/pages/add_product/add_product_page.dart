@@ -1,6 +1,8 @@
+import 'package:carrot_feirinha/src/model/product_model.dart';
 import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 import '../../components/cards/editable_item_card.dart';
 
@@ -12,6 +14,30 @@ class AddProductPage extends StatefulWidget {
 }
 
 class _AddProductPageState extends State<AddProductPage> {
+  List<Product> products = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadProducts();
+  }
+
+  Future<void> _loadProducts() async {
+    try {
+      List<Product> loadedProducts =
+          await ScopedModel.of<ProductModel>(context).loadProducts();
+      setState(() {
+        products = loadedProducts;
+        print("Produtos: $products");
+      });
+    } catch (error) {
+      setState(() {
+        products = [];
+        print("Erro ao carregar produtos: $error");
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,50 +45,68 @@ class _AddProductPageState extends State<AddProductPage> {
         padding: const EdgeInsets.symmetric(
           vertical: 40,
         ),
-        child: StaggeredGrid.count(
-          crossAxisCount: 4,
-          mainAxisSpacing: 2,
-          crossAxisSpacing: 2,
-          children: const [
-            StaggeredGridTile.count(
-              crossAxisCellCount: 2,
-              mainAxisCellCount: 2,
-              child: EditableItemCard(
-                urlImage: "assets/images/abacate.png",
-                price: 12,
-                nameProduct: "Abacate",
-                quantityProduct: 22,
-              ),
-            ),
-            StaggeredGridTile.count(
-              crossAxisCellCount: 2,
-              mainAxisCellCount: 2,
-              child: EditableItemCard(
-                urlImage: "assets/images/abacate.png",
-                price: 12,
-                nameProduct: "Abacate",
-                quantityProduct: 22,
-              ),
-            ),
-            StaggeredGridTile.count(
-              crossAxisCellCount: 2,
-              mainAxisCellCount: 2,
-              child: EditableItemCard(
-                urlImage: "assets/images/abacate.png",
-                price: 12,
-                nameProduct: "Abacate",
-                quantityProduct: 22,
-              ),
-            ),
-            StaggeredGridTile.count(
-              crossAxisCellCount: 2,
-              mainAxisCellCount: 2,
-              child: EditableItemCard(
-                urlImage: "assets/images/abacate.png",
-                price: 12,
-                nameProduct: "Abacate",
-                quantityProduct: 22,
-              ),
+        child: Column(
+          children: [
+            // Expanded(
+            //   child: GridView.count(
+            //     crossAxisCount: 2,
+            //     childAspectRatio: 0.71,
+            //     children: List.generate(products.length, (index) {
+            //       return EditableItemCard(
+            //         nameProduct: products[index].name,
+            //         price: products[index].price,
+            //         quantityProduct: products[index].quantityProduct,
+            //         urlImage: products[index].img,
+            //       );
+            //     }),
+            //   ),
+            // ),
+            StaggeredGrid.count(
+              crossAxisCount: 4,
+              mainAxisSpacing: 2,
+              crossAxisSpacing: 2,
+              children: const [
+                StaggeredGridTile.count(
+                  crossAxisCellCount: 2,
+                  mainAxisCellCount: 2,
+                  child: EditableItemCard(
+                    urlImage: "assets/images/abacate.png",
+                    price: 12,
+                    nameProduct: "Abacate",
+                    quantityProduct: 22,
+                  ),
+                ),
+                StaggeredGridTile.count(
+                  crossAxisCellCount: 2,
+                  mainAxisCellCount: 2,
+                  child: EditableItemCard(
+                    urlImage: "assets/images/abacate.png",
+                    price: 12,
+                    nameProduct: "Abacate",
+                    quantityProduct: 22,
+                  ),
+                ),
+                StaggeredGridTile.count(
+                  crossAxisCellCount: 2,
+                  mainAxisCellCount: 2,
+                  child: EditableItemCard(
+                    urlImage: "assets/images/abacate.png",
+                    price: 12,
+                    nameProduct: "Abacate",
+                    quantityProduct: 22,
+                  ),
+                ),
+                StaggeredGridTile.count(
+                  crossAxisCellCount: 2,
+                  mainAxisCellCount: 2,
+                  child: EditableItemCard(
+                    urlImage: "assets/images/abacate.png",
+                    price: 12,
+                    nameProduct: "Abacate",
+                    quantityProduct: 22,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

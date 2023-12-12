@@ -18,10 +18,11 @@ class FormProductPage extends StatefulWidget {
 
 class _FormProductPageState extends State<FormProductPage> {
   final _controllerProductName = TextEditingController();
-  final _controllerProductCategory = TextEditingController();
   final _controllerProductQuantity = TextEditingController();
   final _controllerProductPrice = TextEditingController();
   String urlImgProduct = '';
+  String productCategory = '';
+  int quantityProduct = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -75,8 +76,23 @@ class _FormProductPageState extends State<FormProductPage> {
               label: "Nome",
               hintText: "Ex: Laranja",
             ),
-            const ProductCategoryInput(),
-            const PriceQuantityInputRow(),
+            ProductCategoryInput(
+              productCategory: productCategory,
+              onSelectCategory: (nameCategory) {
+                setState(() {
+                  productCategory = nameCategory;
+                });
+              },
+            ),
+            PriceQuantityInputRow(
+              controllerProductPrice: _controllerProductPrice,
+              quantityProduct: quantityProduct,
+              onSelectQuantity: (quantity) {
+                setState(() {
+                  quantityProduct = quantity;
+                });
+              },
+            ),
             const SizedBox(
               height: 24,
             ),
@@ -84,9 +100,16 @@ class _FormProductPageState extends State<FormProductPage> {
               label: "Adicionar",
               onTap: () {
                 if (urlImgProduct != '') {
-                  Product product = Product(_controllerProductName.text,
-                      urlImgProduct, 6, "description", "category");
-                  ScopedModel.of<ProductModel>(context).AddProduct(product);
+                  Product product = Product(
+                      _controllerProductName.text,
+                      urlImgProduct,
+                      double.parse(_controllerProductPrice.text),
+                      quantityProduct,
+                      "description",
+                      productCategory);
+                  // Product sd = Product(name, img, price, description, category)
+                  ScopedModel.of<ProductModel>(context)
+                      .AddProduct(context, product);
                 }
               },
             ),

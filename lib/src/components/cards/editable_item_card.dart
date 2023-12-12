@@ -13,7 +13,7 @@ class EditableItemCard extends StatefulWidget {
   final String urlImage;
   final double price;
   final String nameProduct;
-  final double quantityProduct;
+  final int quantityProduct;
 
   @override
   State<EditableItemCard> createState() => _EditableItemCardState();

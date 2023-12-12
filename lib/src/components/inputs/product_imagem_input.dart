@@ -22,11 +22,9 @@ class ProductImageInput extends StatefulWidget {
 
 class _ProductImageInputState extends State<ProductImageInput> {
   XFile? _image;
-  // Uint8List? imageBytes;
 
   void _selecetImage() async {
     XFile img = await pickImage(ImageSource.gallery);
-    // imageBytes = await img.readAsBytes();
     setState(() {
       _image = img;
     });
@@ -50,15 +48,10 @@ class _ProductImageInputState extends State<ProductImageInput> {
                 ),
               ),
             )
-          : Container(
-              width: 124,
-              height: 124,
-              decoration: BoxDecoration(
-                color: AppColors.gray300,
-                borderRadius: BorderRadius.circular(
-                    64), // Ajuste o valor conforme necessário
-              ),
-              child: const Align(
+          : const CircleAvatar(
+              radius: 64,
+              backgroundColor: AppColors.gray400,
+              child: Align(
                 alignment: Alignment.bottomRight,
                 child: Icon(
                   Icons.camera_alt,

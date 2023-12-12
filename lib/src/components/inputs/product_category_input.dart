@@ -2,7 +2,14 @@ import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:flutter/material.dart';
 
 class ProductCategoryInput extends StatefulWidget {
-  const ProductCategoryInput({Key? key}) : super(key: key);
+  const ProductCategoryInput({
+    Key? key,
+    required this.productCategory,
+    required this.onSelectCategory,
+  }) : super(key: key);
+
+  final String productCategory;
+  final Function(String) onSelectCategory;
 
   @override
   State<ProductCategoryInput> createState() => _ProductCategoryInputState();
@@ -16,7 +23,7 @@ class _ProductCategoryInputState extends State<ProductCategoryInput> {
     'Legumes',
     'Carne'
   ];
-  
+
   String _selectedOption = '- Selecione a classificação -';
 
   @override
@@ -57,6 +64,7 @@ class _ProductCategoryInputState extends State<ProductCategoryInput> {
             setState(() {
               _selectedOption = item!;
             });
+            widget.onSelectCategory(_selectedOption);
           },
           items: list.map((String value) {
             return DropdownMenuItem<String>(

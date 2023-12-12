@@ -2,7 +2,14 @@ import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:flutter/material.dart';
 
 class QuantityCounterInput extends StatefulWidget {
-  const QuantityCounterInput({super.key});
+  const QuantityCounterInput({
+    Key? key,
+    required this.quantityProduct,
+    required this.onSelectQuantity,
+  }) : super(key: key);
+
+  final num quantityProduct;
+  final Function(num) onSelectQuantity;
 
   @override
   State<QuantityCounterInput> createState() => _QuantityCounterInputState();
@@ -14,12 +21,14 @@ class _QuantityCounterInputState extends State<QuantityCounterInput> {
   void onIncremente() {
     setState(() {
       if (quantityProduct <= 9) quantityProduct++;
+      widget.onSelectQuantity(quantityProduct);
     });
   }
 
   void onDecrement() {
     setState(() {
       if (quantityProduct >= 2) quantityProduct--;
+      widget.onSelectQuantity(quantityProduct);
     });
   }
 

@@ -9,6 +9,7 @@ class UserModel extends Model {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   User? user;
   bool isLoading = false;
+  bool isAdmin = false;
 
   Future<void> _getUser(Map<String, dynamic> data) async {
     user = _auth.currentUser;
@@ -16,6 +17,7 @@ class UserModel extends Model {
       'uid': user!.uid,
       'name': data['name'],
       'email': data['email'],
+      'isAdmin': data['isAdmin']
     };
 
     await FirebaseFirestore.instance
@@ -128,6 +130,8 @@ class UserModel extends Model {
         if (userDataSnapshot.exists) {
           final userData = userDataSnapshot.data()!;
           await user!.updateDisplayName(userData['name']);
+          isAdmin = userData['isAdmin']; 
+          print("User: ${isAdmin}");
           notifyListeners();
         }
       } catch (e) {
@@ -138,5 +142,9 @@ class UserModel extends Model {
 
   bool isLoggedIn() {
     return user != null;
+  }
+
+    bool isUserAdmin() {
+    return isAdmin;
   }
 }

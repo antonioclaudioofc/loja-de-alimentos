@@ -2,12 +2,15 @@ import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import '../../components/inputs/common_input.dart';
-import '../../model/user_model.dart';
-import '../../style/exports.dart';
-import '../../components/app_logo.dart';
-import '../../components/create_or_login_account_button.dart';
-import '../../components/header_logo.dart';
+import '../components/app_logo.dart';
+import '../components/create_or_login_account_button.dart';
+import '../components/header_logo.dart';
+import '../components/inputs/common_input.dart';
+import '../model/user_model.dart';
+import '../route/app_routes.dart';
+import '../style/app_colors.dart';
+import '../style/app_text_styles.dart';
+
 
 class SigninPage extends StatefulWidget {
   const SigninPage({Key? key}) : super(key: key);
@@ -138,7 +141,7 @@ class _SigninPageState extends State<SigninPage> {
   void _onSuccess() {
     Navigator.pushNamed(
       context,
-      PagePaths.navigationPath,
+      PagePaths.checkUserOrAdmin,
     );
   }
 

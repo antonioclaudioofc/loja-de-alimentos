@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../style/app_colors.dart';
-import '../../style/app_text_styles.dart';
-import '../../components/buttons/custom_button.dart';
-import '../../components/cards/cart_item_card.dart';
+import '../components/buttons/custom_button.dart';
+import '../components/cards/cart_item_card.dart';
+import '../style/exports.dart';
+
 
 class MyCartPage extends StatelessWidget {
   const MyCartPage({super.key});

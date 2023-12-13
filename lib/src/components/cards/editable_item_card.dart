@@ -1,4 +1,5 @@
 import 'package:carrot_feirinha/src/style/exports.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class EditableItemCard extends StatefulWidget {
@@ -27,8 +28,6 @@ class _EditableItemCardState extends State<EditableItemCard> {
         horizontal: 8.0,
       ),
       child: Container(
-        // height: 180,
-        // height: double.infinity,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
@@ -51,11 +50,9 @@ class _EditableItemCardState extends State<EditableItemCard> {
                 ),
                 width: 96,
                 height: 74,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(widget.urlImage),
-                    fit: BoxFit.fitWidth,
-                  ),
+                child: Image.network(
+                  widget.urlImage,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
 import 'package:carrot_feirinha/src/components/inputs/common_input.dart';
 import 'package:carrot_feirinha/src/components/inputs/price_quantity_input_row.dart';
@@ -5,9 +7,10 @@ import 'package:carrot_feirinha/src/components/inputs/product_category_input.dar
 import 'package:carrot_feirinha/src/model/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
-import '../../style/exports.dart';
-import '../../components/inputs/product_imagem_input.dart';
+import '../components/inputs/product_imagem_input.dart';
+import '../style/exports.dart';
 
 class FormProductPage extends StatefulWidget {
   const FormProductPage({super.key});
@@ -21,6 +24,7 @@ class _FormProductPageState extends State<FormProductPage> {
   final _controllerProductQuantity = TextEditingController();
   final _controllerProductPrice = TextEditingController();
   String urlImgProduct = '';
+  String urlImgFirestore = '';
   String productCategory = '';
   int quantityProduct = 1;
 
@@ -100,16 +104,7 @@ class _FormProductPageState extends State<FormProductPage> {
               label: "Adicionar",
               onTap: () {
                 if (urlImgProduct != '') {
-                  Product product = Product(
-                      _controllerProductName.text,
-                      urlImgProduct,
-                      double.parse(_controllerProductPrice.text),
-                      quantityProduct,
-                      "description",
-                      productCategory);
-                  // Product sd = Product(name, img, price, description, category)
-                  ScopedModel.of<ProductModel>(context)
-                      .AddProduct(context, product);
+                  uploadImageForFirestorage();
                 }
               },
             ),
@@ -117,5 +112,32 @@ class _FormProductPageState extends State<FormProductPage> {
         ),
       ),
     );
+  }
+
+  void uploadImageForFirestorage() async {
+    String filename =
+        "images/img-${DateTime.fromMicrosecondsSinceEpoch(100).toString()}.jpg";
+
+    Reference referenceRoot = FirebaseStorage.instance.ref();
+    Reference referenceDirImages = referenceRoot.child('images');
+
+    Reference referenceImageToUpload = referenceDirImages.child(filename);
+
+    try {
+      await referenceImageToUpload.putFile(File(urlImgProduct));
+
+      urlImgFirestore = await referenceImageToUpload.getDownloadURL();
+
+      Product product = Product(
+          _controllerProductName.text,
+          urlImgFirestore,
+          double.parse(_controllerProductPrice.text),
+          quantityProduct,
+          "description",
+          productCategory);
+      ScopedModel.of<ProductModel>(context).AddProduct(context, product);
+    } catch (error) {
+      print(error);
+    }
   }
 }

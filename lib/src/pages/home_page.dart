@@ -1,11 +1,11 @@
 import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:flutter/material.dart';
 
-import '../../components/cards/category_card.dart';
-import '../../components/cards/food_item_card.dart';
-import '../../components/cards/offer_card.dart';
-import '../../components/inputs/search_input.dart';
-import '../../components/location_logo.dart';
+import '../components/cards/category_card.dart';
+import '../components/cards/food_item_card.dart';
+import '../components/cards/offer_card.dart';
+import '../components/location_logo.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

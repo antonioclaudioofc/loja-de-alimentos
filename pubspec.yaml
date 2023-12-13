@@ -46,6 +46,7 @@ dependencies:
   scoped_model: ^2.0.0
   image_picker: ^1.0.4
   firebase_storage: ^11.5.5
+  cached_network_image: ^3.3.0
 
 
 flutter_native_splash:

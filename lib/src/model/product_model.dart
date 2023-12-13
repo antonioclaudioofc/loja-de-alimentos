@@ -1,8 +1,8 @@
 import 'package:carrot_feirinha/src/style/app_colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
+
 
 class Product {
   String name;

@@ -1,16 +1,14 @@
-import 'package:carrot_feirinha/src/services/auth_service.dart';
 import 'package:carrot_feirinha/src/style/exports.dart';
 import 'package:carrot_feirinha/src/components/buttons/custom_button.dart';
 import 'package:carrot_feirinha/src/components/header_logo.dart';
 import 'package:carrot_feirinha/src/components/inputs/common_input.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import '../../components/app_logo.dart';
-import '../../components/create_or_login_account_button.dart';
-import '../../model/user_model.dart';
+import '../components/app_logo.dart';
+import '../components/create_or_login_account_button.dart';
+import '../model/user_model.dart';
+
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -111,6 +109,7 @@ class _SignupPageState extends State<SignupPage> {
                               Map<String, dynamic> userData = {
                                 'name': _controllerName.text,
                                 'email': _controllerEmail.text,
+                                'isAdmin': false,
                               };
 
                               model.signUp(

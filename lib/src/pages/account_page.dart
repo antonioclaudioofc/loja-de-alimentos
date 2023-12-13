@@ -3,10 +3,10 @@ import 'package:carrot_feirinha/src/model/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import '../../route/app_routes.dart';
-import '../../style/app_colors.dart';
-import '../../style/app_text_styles.dart';
-import '../../components/cards/item_configuration.dart';
+import '../components/cards/item_configuration.dart';
+import '../style/exports.dart';
+
+
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});

@@ -1,20 +1,22 @@
-import 'package:carrot_feirinha/src/pages/home/home_page.dart';
+import 'package:carrot_feirinha/src/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
-import '../../style/exports.dart';
-import '../account/account_page.dart';
-import '../add_product/add_product_page.dart';
-import '../my_cart/my_cart_page.dart';
-import '../search/search_page.dart';
+import '../style/app_colors.dart';
+import 'account_page.dart';
+import 'add_product_page.dart';
+import 'home_page.dart';
+import 'my_cart_page.dart';
 
-class NavigationPage extends StatefulWidget {
-  const NavigationPage({super.key});
+
+
+class NavigationPageAdmin extends StatefulWidget {
+  const NavigationPageAdmin({super.key});
 
   @override
-  State<NavigationPage> createState() => _NavigationPageState();
+  State<NavigationPageAdmin> createState() => _NavigationPageAdminState();
 }
 
-class _NavigationPageState extends State<NavigationPage> {
+class _NavigationPageAdminState extends State<NavigationPageAdmin> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
     const HomePage(),

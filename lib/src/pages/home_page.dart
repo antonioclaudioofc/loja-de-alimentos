@@ -6,7 +6,6 @@ import '../components/cards/food_item_card.dart';
 import '../components/cards/offer_card.dart';
 import '../components/location_logo.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -44,13 +43,12 @@ class _HomePageState extends State<HomePage> {
           OfferCard(
             label: "Ofertas Exclusicas",
             labelAction: "ver mais",
-            onPressed: () {},
           ),
           Container(
             padding: const EdgeInsets.symmetric(
-              horizontal: 16,
+              horizontal: 12,
             ),
-            height: 240,
+            height: 275,
             width: double.infinity,
             child: ListView(
               scrollDirection: Axis.horizontal,
@@ -60,24 +58,32 @@ class _HomePageState extends State<HomePage> {
                   price: 6,
                   quantityProduct: 12,
                   urlImage: "assets/images/abacate.png",
+                  details:
+                      "O abacate é uma fruta incrivelmente versátil e deliciosa, conhecida por sua textura cremosa e sabor suave",
                 ),
                 FoodItemCard(
                   nameProduct: "Caju",
                   price: 3,
                   quantityProduct: 24,
                   urlImage: "assets/images/caju.png",
+                  details:
+                      "O caju é uma fruta exótica que cresce em regiões tropicais, conhecida por sua forma única e sabor distinto",
                 ),
                 FoodItemCard(
                   nameProduct: "Goiaba",
                   price: 2.5,
                   quantityProduct: 6,
                   urlImage: "assets/images/goiaba.png",
+                  details:
+                      "A goiaba é uma fruta de polpa suculenta e aroma adocicado.",
                 ),
                 FoodItemCard(
                   nameProduct: "Manga",
                   price: 5,
                   quantityProduct: 23,
                   urlImage: "assets/images/manga.png",
+                  details:
+                      "A manga é uma fruta tropical amplamente apreciada por sua doçura e suculência",
                 ),
               ],
             ),
@@ -88,7 +94,6 @@ class _HomePageState extends State<HomePage> {
           OfferCard(
             label: "Mais Vendidos",
             labelAction: "ver mais",
-            onPressed: () {},
           ),
           const SizedBox(
             height: 24,
@@ -135,7 +140,6 @@ class _HomePageState extends State<HomePage> {
           OfferCard(
             label: "Mantimentos",
             labelAction: "ver mais",
-            onPressed: () {},
           ),
           const SizedBox(
             height: 24,

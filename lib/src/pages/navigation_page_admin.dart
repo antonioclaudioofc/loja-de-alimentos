@@ -1,3 +1,4 @@
+import 'package:carrot_feirinha/src/pages/custom_orders_page.dart';
 import 'package:carrot_feirinha/src/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _NavigationPageAdminState extends State<NavigationPageAdmin> {
     const HomePage(),
     const SearchPage(),
     const AddProductPage(),
-    const MyCartPage(),
+    const CustomOrdersPage(),
     const AccountPage(),
   ];
 
@@ -68,9 +69,9 @@ class _NavigationPageAdminState extends State<NavigationPageAdmin> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.add_shopping_cart,
+              Icons.playlist_add,
             ),
-            label: "Carrinho",
+            label: "Pedidos",
           ),
           BottomNavigationBarItem(
             icon: Icon(

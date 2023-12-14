@@ -52,8 +52,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     return ScopedModelDescendant<ProductModel>(
                       builder: (context, child, model) {
                         return EditableItemCard(
-                          urlImage:
-                              "https://firebasestorage.googleapis.com/v0/b/app-nectar.appspot.com/o/images%2Fimages%2Fimg-1969-12-31%2021%3A00%3A00.000100.jpg?alt=media&token=1bf61b5d-aa78-4e56-aac1-df9d470e4fbf",
+                          urlImage: model.products[index].img,
                           price: model.products[index].price,
                           nameProduct: model.products[index].name,
                           quantityProduct:

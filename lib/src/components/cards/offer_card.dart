@@ -6,12 +6,12 @@ class OfferCard extends StatelessWidget {
     Key? key,
     required this.label,
     required this.labelAction,
-    required this.onPressed,
+    this.onPressed,
   }) : super(key: key);
 
   final String label;
   final String labelAction;
-  final Function() onPressed;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,12 @@ class OfferCard extends StatelessWidget {
           style: AppTextStyles.h3,
         ),
         TextButton(
-          onPressed: onPressed,
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              PagePaths.catalogProduct,
+            );
+          },
           child: Text(
             labelAction,
             style: AppTextStyles.h4.copyWith(

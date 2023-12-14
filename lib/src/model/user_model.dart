@@ -11,6 +11,9 @@ class UserModel extends Model {
   bool isLoading = false;
   bool isAdmin = false;
 
+  String? get uid => null;
+
+
   Future<void> _getUser(Map<String, dynamic> data) async {
     user = _auth.currentUser;
     Map<String, dynamic> userData = {

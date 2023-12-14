@@ -11,7 +11,6 @@ import '../route/app_routes.dart';
 import '../style/app_colors.dart';
 import '../style/app_text_styles.dart';
 
-
 class SigninPage extends StatefulWidget {
   const SigninPage({Key? key}) : super(key: key);
 
@@ -22,6 +21,8 @@ class SigninPage extends StatefulWidget {
 class _SigninPageState extends State<SigninPage> {
   final _controllerEmail = TextEditingController();
   final _controllerPassword = TextEditingController();
+
+  bool _isPasswordVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -50,21 +51,60 @@ class _SigninPageState extends State<SigninPage> {
                       children: [
                         CommonInput(
                           label: "Email",
-                          hintText: "Digite seu email",
+                          hintText: "Insira seu email",
                           controller: _controllerEmail,
+                          type: TextInputType.emailAddress,
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'O e-mail é obrigatório';
+                            } else if (!isValidEmail(value)) {
+                              return 'Digite um e-mail válido';
+                            }
+                            return "";
+                          },
                         ),
                         const SizedBox(
                           height: 16,
                         ),
-                        CommonInput(
-                          controller: _controllerPassword,
-                          label: "Senha",
-                          hintText: "***********",
-                          icon: const Icon(
-                            Icons.visibility_off_outlined,
-                            color: AppColors.gray400,
-                          ),
-                          obscureText: true,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Senha",
+                              style: AppTextStyles.h4.copyWith(
+                                color: AppColors.gray600,
+                              ),
+                              textAlign: TextAlign.start,
+                            ),
+                            TextFormField(
+                              controller: _controllerPassword,
+                              obscureText: !_isPasswordVisible,
+                              decoration: InputDecoration(
+                                hintText: "Insira sua senha",
+                                hintStyle: AppTextStyles.h3.copyWith(
+                                  color: AppColors.gray400,
+                                ),
+                                border: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: AppColors.gray300,
+                                  ),
+                                ),
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    _isPasswordVisible
+                                        ? Icons.visibility_outlined
+                                        : Icons.visibility_off_outlined,
+                                    color: Colors.grey,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _isPasswordVisible = !_isPasswordVisible;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                         const SizedBox(
                           height: 6,
@@ -84,11 +124,6 @@ class _SigninPageState extends State<SigninPage> {
                         CustomButton(
                           label: "Entrar",
                           onTap: () {
-                            // Navigator.pushNamed(
-                            //   context,
-                            //   PagePaths.navigationPath,
-                            // );
-
                             model.signIn(
                               context,
                               _controllerEmail.text,
@@ -157,5 +192,13 @@ class _SigninPageState extends State<SigninPage> {
         ),
       );
     });
+  }
+
+  bool isValidEmail(String email) {
+    final emailRegExp = RegExp(
+      r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$',
+    );
+
+    return emailRegExp.hasMatch(email);
   }
 }

@@ -29,58 +29,53 @@ class CustomButton extends StatefulWidget {
 class _CustomButtonState extends State<CustomButton> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: widget.onTap,
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(
-          vertical: 12,
+    return ElevatedButton(
+      onPressed: widget.onTap,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: widget.color,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
         ),
-        decoration: ShapeDecoration(
-          color: widget.color,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (widget.isGoogle)
-                Row(
-                  children: [
-                    const SizedBox(
-                      width: 16,
-                    ),
-                    SvgPicture.asset(
-                      "assets/images/icon_google.svg",
-                      height: 20,
-                    ),
-                  ],
-                ),
-              if (widget.logout)
-                const Row(
-                  children: [
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Icon(
-                      Icons.logout,
-                      color: AppColors.red500,
-                    ),
-                  ],
-                ),
-              Expanded(
-                child: Text(
-                  widget.label,
-                  style: AppTextStyles.h3.copyWith(
-                    color: widget.logout ? AppColors.red500 : AppColors.gray50,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 14),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            if (widget.isGoogle)
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 16,
                   ),
-                  textAlign: TextAlign.center,
-                ),
+                  SvgPicture.asset(
+                    "assets/images/icon_google.svg",
+                    height: 20,
+                  ),
+                ],
               ),
-            ],
-          ),
+            if (widget.logout)
+              const Row(
+                children: [
+                  SizedBox(
+                    width: 12,
+                  ),
+                  Icon(
+                    Icons.logout,
+                    color: AppColors.red500,
+                  ),
+                ],
+              ),
+            Expanded(
+              child: Text(
+                widget.label,
+                style: AppTextStyles.h3.copyWith(
+                  color: widget.logout ? AppColors.red500 : AppColors.gray50,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
         ),
       ),
     );
